@@ -1,3 +1,4 @@
 - [2024-10-01T11:54:03+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2024-10-04T16:22:49+05:30] docs(readme): add installation guide and local setup instructions
 - [2024-10-04T19:59:38+05:30] style(theme): refine dark mode color tokens and contrast ratios
+- [2024-10-08T11:11:45+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
