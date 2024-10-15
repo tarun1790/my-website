@@ -10,3 +10,4 @@
 - [2024-10-11T13:18:52+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-10-11T15:17:32+05:30] docs(readme): add installation guide and local setup instructions
 - [2024-10-11T21:35:57+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2024-10-15T09:56:33+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
