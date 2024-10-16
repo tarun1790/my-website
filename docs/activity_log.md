@@ -14,3 +14,4 @@
 - [2024-10-15T13:38:20+05:30] perf(assets): implement responsive srcset image optimization
 - [2024-10-16T10:21:26+05:30] style(buttons): refine hover states and active button feedback
 - [2024-10-16T10:31:45+05:30] style(buttons): refine hover states and active button feedback
+- [2024-10-16T13:34:27+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
