@@ -12,3 +12,4 @@
 - [2024-10-11T21:35:57+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-10-15T09:56:33+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2024-10-15T13:38:20+05:30] perf(assets): implement responsive srcset image optimization
+- [2024-10-16T10:21:26+05:30] style(buttons): refine hover states and active button feedback
