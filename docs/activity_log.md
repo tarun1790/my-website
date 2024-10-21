@@ -17,3 +17,4 @@
 - [2024-10-16T13:34:27+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2024-10-21T14:18:11+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2024-10-21T16:46:09+05:30] style(buttons): refine hover states and active button feedback
+- [2024-10-21T19:39:47+05:30] perf(assets): implement responsive srcset image optimization
