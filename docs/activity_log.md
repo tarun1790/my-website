@@ -22,3 +22,4 @@
 - [2024-10-24T12:55:46+05:30] style(typography): update font scale and line-height balance
 - [2024-10-28T13:18:32+05:30] perf(cache): configure service worker asset caching strategy
 - [2024-10-28T14:48:02+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2024-10-29T13:53:50+05:30] feat(nav): add responsive mobile drawer navigation menu
