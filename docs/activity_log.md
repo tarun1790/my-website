@@ -23,3 +23,4 @@
 - [2024-10-28T13:18:32+05:30] perf(cache): configure service worker asset caching strategy
 - [2024-10-28T14:48:02+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2024-10-29T13:53:50+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2024-10-29T15:33:19+05:30] perf(bundle): remove unused dependencies and reduce vendor size
