@@ -25,3 +25,4 @@
 - [2024-10-29T13:53:50+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2024-10-29T15:33:19+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-10-31T13:15:34+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2024-11-01T09:49:21+05:30] docs(readme): add installation guide and local setup instructions
