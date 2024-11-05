@@ -29,3 +29,4 @@
 - [2024-11-01T18:18:49+05:30] perf(cache): configure service worker asset caching strategy
 - [2024-11-02T20:34:58+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-11-04T19:45:27+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2024-11-05T16:17:04+05:30] feat(nav): add responsive mobile drawer navigation menu
