@@ -30,3 +30,4 @@
 - [2024-11-02T20:34:58+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-11-04T19:45:27+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2024-11-05T16:17:04+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2024-11-06T12:32:59+05:30] perf(assets): implement responsive srcset image optimization
