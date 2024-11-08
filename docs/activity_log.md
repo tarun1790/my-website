@@ -32,3 +32,4 @@
 - [2024-11-05T16:17:04+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2024-11-06T12:32:59+05:30] perf(assets): implement responsive srcset image optimization
 - [2024-11-08T09:46:17+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2024-11-08T13:05:02+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
