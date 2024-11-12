@@ -35,3 +35,4 @@
 - [2024-11-08T13:05:02+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2024-11-12T11:02:04+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2024-11-12T13:19:57+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2024-11-12T20:41:50+05:30] fix(forms): resolve autofocus issue on contact input fields
