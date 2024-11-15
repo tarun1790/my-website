@@ -39,3 +39,4 @@
 - [2024-11-13T13:55:22+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2024-11-15T11:48:32+05:30] style(buttons): refine hover states and active button feedback
 - [2024-11-15T12:43:27+05:30] style(theme): refine dark mode color tokens and contrast ratios
+- [2024-11-15T13:07:00+05:30] perf(cache): configure service worker asset caching strategy
