@@ -44,3 +44,4 @@
 - [2024-11-15T17:40:42+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2024-11-15T21:21:17+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2024-11-16T15:49:45+05:30] style(buttons): refine hover states and active button feedback
+- [2024-11-17T13:17:38+05:30] style(typography): update font scale and line-height balance
