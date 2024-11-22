@@ -46,3 +46,4 @@
 - [2024-11-16T15:49:45+05:30] style(buttons): refine hover states and active button feedback
 - [2024-11-17T13:17:38+05:30] style(typography): update font scale and line-height balance
 - [2024-11-20T18:51:09+05:30] perf(cache): configure service worker asset caching strategy
+- [2024-11-22T10:57:17+05:30] perf(bundle): remove unused dependencies and reduce vendor size
