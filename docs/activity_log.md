@@ -48,3 +48,4 @@
 - [2024-11-20T18:51:09+05:30] perf(cache): configure service worker asset caching strategy
 - [2024-11-22T10:57:17+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-11-22T13:11:34+05:30] style(buttons): refine hover states and active button feedback
+- [2024-11-25T12:06:49+05:30] style(theme): refine dark mode color tokens and contrast ratios
