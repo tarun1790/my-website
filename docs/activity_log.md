@@ -50,3 +50,4 @@
 - [2024-11-22T13:11:34+05:30] style(buttons): refine hover states and active button feedback
 - [2024-11-25T12:06:49+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2024-11-26T20:56:09+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2024-11-26T21:08:51+05:30] perf(bundle): remove unused dependencies and reduce vendor size
