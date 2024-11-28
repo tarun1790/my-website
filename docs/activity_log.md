@@ -52,3 +52,4 @@
 - [2024-11-26T20:56:09+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2024-11-26T21:08:51+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2024-11-27T11:24:42+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2024-11-28T09:35:26+05:30] docs(readme): add installation guide and local setup instructions
