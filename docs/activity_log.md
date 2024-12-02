@@ -56,3 +56,4 @@
 - [2024-11-28T14:32:12+05:30] perf(assets): implement responsive srcset image optimization
 - [2024-11-28T20:30:51+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2024-11-28T21:07:33+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2024-12-02T13:13:51+05:30] feat(animation): implement smooth scroll reveal transitions
