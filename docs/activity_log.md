@@ -58,3 +58,4 @@
 - [2024-11-28T21:07:33+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2024-12-02T13:13:51+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2024-12-02T18:38:10+05:30] perf(assets): implement responsive srcset image optimization
+- [2024-12-03T12:09:40+05:30] style(typography): update font scale and line-height balance
