@@ -60,3 +60,4 @@
 - [2024-12-02T18:38:10+05:30] perf(assets): implement responsive srcset image optimization
 - [2024-12-03T12:09:40+05:30] style(typography): update font scale and line-height balance
 - [2024-12-04T18:19:03+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2024-12-06T18:50:46+05:30] style(buttons): refine hover states and active button feedback
