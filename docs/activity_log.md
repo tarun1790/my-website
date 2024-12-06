@@ -62,3 +62,4 @@
 - [2024-12-04T18:19:03+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2024-12-06T18:50:46+05:30] style(buttons): refine hover states and active button feedback
 - [2024-12-06T19:03:02+05:30] docs(readme): add installation guide and local setup instructions
+- [2024-12-06T20:19:27+05:30] style(theme): refine dark mode color tokens and contrast ratios
