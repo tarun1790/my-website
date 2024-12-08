@@ -63,3 +63,4 @@
 - [2024-12-06T18:50:46+05:30] style(buttons): refine hover states and active button feedback
 - [2024-12-06T19:03:02+05:30] docs(readme): add installation guide and local setup instructions
 - [2024-12-06T20:19:27+05:30] style(theme): refine dark mode color tokens and contrast ratios
+- [2024-12-08T17:47:36+05:30] perf(bundle): remove unused dependencies and reduce vendor size
