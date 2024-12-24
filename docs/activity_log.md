@@ -70,3 +70,4 @@
 - [2024-12-12T20:49:31+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2024-12-12T21:11:11+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2024-12-19T12:51:38+05:30] perf(cache): configure service worker asset caching strategy
+- [2024-12-24T15:31:49+05:30] style(theme): refine dark mode color tokens and contrast ratios
