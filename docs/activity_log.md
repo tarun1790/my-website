@@ -72,3 +72,4 @@
 - [2024-12-19T12:51:38+05:30] perf(cache): configure service worker asset caching strategy
 - [2024-12-24T15:31:49+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2024-12-25T13:00:45+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2024-12-25T17:58:34+05:30] perf(bundle): remove unused dependencies and reduce vendor size
