@@ -73,3 +73,4 @@
 - [2024-12-24T15:31:49+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2024-12-25T13:00:45+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2024-12-25T17:58:34+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2024-12-26T18:18:00+05:30] style(typography): update font scale and line-height balance
