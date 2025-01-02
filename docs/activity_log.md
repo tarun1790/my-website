@@ -81,3 +81,4 @@
 - [2024-12-31T16:15:57+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2024-12-31T17:19:22+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-01-01T12:57:38+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-01-02T12:50:13+05:30] perf(cache): configure service worker asset caching strategy
