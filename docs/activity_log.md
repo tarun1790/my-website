@@ -87,3 +87,4 @@
 - [2025-01-06T17:58:44+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-01-06T20:56:21+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-01-07T17:37:34+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-01-08T20:41:55+05:30] style(typography): update font scale and line-height balance
