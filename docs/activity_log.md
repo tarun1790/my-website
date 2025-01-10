@@ -89,3 +89,4 @@
 - [2025-01-07T17:37:34+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-01-08T20:41:55+05:30] style(typography): update font scale and line-height balance
 - [2025-01-09T18:23:33+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-01-10T10:17:02+05:30] docs(readme): add installation guide and local setup instructions
