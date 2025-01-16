@@ -90,3 +90,4 @@
 - [2025-01-08T20:41:55+05:30] style(typography): update font scale and line-height balance
 - [2025-01-09T18:23:33+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-01-10T10:17:02+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-01-16T10:51:18+05:30] fix(forms): resolve autofocus issue on contact input fields
