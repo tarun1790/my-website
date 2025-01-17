@@ -93,3 +93,4 @@
 - [2025-01-16T10:51:18+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-01-17T11:40:25+05:30] style(typography): update font scale and line-height balance
 - [2025-01-17T17:37:19+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-01-17T20:15:10+05:30] feat(nav): add responsive mobile drawer navigation menu
