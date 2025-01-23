@@ -94,3 +94,4 @@
 - [2025-01-17T11:40:25+05:30] style(typography): update font scale and line-height balance
 - [2025-01-17T17:37:19+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-01-17T20:15:10+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-01-23T10:31:01+05:30] feat(nav): add responsive mobile drawer navigation menu
