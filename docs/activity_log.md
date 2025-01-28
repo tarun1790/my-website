@@ -100,3 +100,4 @@
 - [2025-01-24T21:59:56+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-01-25T13:59:48+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-01-27T13:19:06+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-01-28T11:29:25+05:30] feat(nav): add responsive mobile drawer navigation menu
