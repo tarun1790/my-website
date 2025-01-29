@@ -106,3 +106,4 @@
 - [2025-01-29T12:36:13+05:30] style(typography): update font scale and line-height balance
 - [2025-01-29T18:30:23+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-01-29T19:47:14+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-01-29T20:04:48+05:30] fix(forms): resolve autofocus issue on contact input fields
