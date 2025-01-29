@@ -101,3 +101,4 @@
 - [2025-01-25T13:59:48+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-01-27T13:19:06+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-01-28T11:29:25+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-01-29T10:28:20+05:30] docs(readme): add installation guide and local setup instructions
