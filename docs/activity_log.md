@@ -102,3 +102,4 @@
 - [2025-01-27T13:19:06+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-01-28T11:29:25+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-01-29T10:28:20+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-01-29T11:30:49+05:30] style(buttons): refine hover states and active button feedback
