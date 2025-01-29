@@ -104,3 +104,4 @@
 - [2025-01-29T10:28:20+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-01-29T11:30:49+05:30] style(buttons): refine hover states and active button feedback
 - [2025-01-29T12:36:13+05:30] style(typography): update font scale and line-height balance
+- [2025-01-29T18:30:23+05:30] perf(cache): configure service worker asset caching strategy
