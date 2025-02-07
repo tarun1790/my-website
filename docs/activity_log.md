@@ -109,3 +109,4 @@
 - [2025-01-29T20:04:48+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-01-29T21:22:12+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-02-05T13:05:23+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-02-07T16:56:28+05:30] style(buttons): refine hover states and active button feedback
