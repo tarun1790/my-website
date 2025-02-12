@@ -113,3 +113,4 @@
 - [2025-02-10T20:05:53+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-02-11T12:41:47+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-02-12T16:05:00+05:30] fix(forms): resolve autofocus issue on contact input fields
+- [2025-02-12T16:35:31+05:30] fix(forms): resolve autofocus issue on contact input fields
