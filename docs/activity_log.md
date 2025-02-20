@@ -119,3 +119,4 @@
 - [2025-02-14T14:09:27+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-02-17T09:55:01+05:30] style(buttons): refine hover states and active button feedback
 - [2025-02-20T13:47:36+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-02-20T15:22:19+05:30] perf(cache): configure service worker asset caching strategy
