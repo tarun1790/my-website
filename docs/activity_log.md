@@ -123,3 +123,4 @@
 - [2025-02-20T15:54:38+05:30] style(buttons): refine hover states and active button feedback
 - [2025-02-22T10:42:38+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-02-24T13:26:38+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-02-26T10:16:22+05:30] perf(cache): configure service worker asset caching strategy
