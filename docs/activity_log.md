@@ -127,3 +127,4 @@
 - [2025-02-27T13:28:35+05:30] style(buttons): refine hover states and active button feedback
 - [2025-03-03T09:02:19+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-03-04T21:16:00+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-03-05T19:59:50+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
