@@ -132,3 +132,4 @@
 - [2025-03-11T21:18:28+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-03-12T13:06:39+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-03-12T15:21:14+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-03-13T12:55:11+05:30] fix(forms): resolve autofocus issue on contact input fields
