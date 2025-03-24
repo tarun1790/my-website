@@ -136,3 +136,4 @@
 - [2025-03-17T15:42:06+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-03-20T17:44:58+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-03-21T16:57:19+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-03-24T14:01:50+05:30] perf(assets): implement responsive srcset image optimization
