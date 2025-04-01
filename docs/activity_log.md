@@ -137,3 +137,4 @@
 - [2025-03-20T17:44:58+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-03-21T16:57:19+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-03-24T14:01:50+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-04-01T11:29:31+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
