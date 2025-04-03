@@ -140,3 +140,4 @@
 - [2025-04-01T11:29:31+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-04-01T18:01:54+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-04-02T17:38:45+05:30] style(theme): refine dark mode color tokens and contrast ratios
+- [2025-04-03T10:33:44+05:30] style(theme): refine dark mode color tokens and contrast ratios
