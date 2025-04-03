@@ -143,3 +143,4 @@
 - [2025-04-03T10:33:44+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-04-03T15:28:01+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-04-03T15:53:49+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-04-03T16:05:57+05:30] perf(cache): configure service worker asset caching strategy
