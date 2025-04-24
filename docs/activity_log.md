@@ -161,3 +161,4 @@
 - [2025-04-22T09:15:34+05:30] style(typography): update font scale and line-height balance
 - [2025-04-23T11:05:52+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-04-24T09:07:42+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-04-24T19:53:33+05:30] perf(assets): implement responsive srcset image optimization
