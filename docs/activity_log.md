@@ -163,3 +163,4 @@
 - [2025-04-24T09:07:42+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-04-24T19:53:33+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-04-25T09:46:55+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-04-25T10:45:32+05:30] docs(readme): add installation guide and local setup instructions
