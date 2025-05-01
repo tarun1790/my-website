@@ -166,3 +166,4 @@
 - [2025-04-25T10:45:32+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-04-25T17:32:36+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-04-29T17:07:59+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-05-01T16:56:19+05:30] style(typography): update font scale and line-height balance
