@@ -169,3 +169,4 @@
 - [2025-05-01T16:56:19+05:30] style(typography): update font scale and line-height balance
 - [2025-05-01T18:46:31+05:30] style(typography): update font scale and line-height balance
 - [2025-05-01T19:09:44+05:30] style(typography): update font scale and line-height balance
+- [2025-05-06T12:12:12+05:30] perf(cache): configure service worker asset caching strategy
