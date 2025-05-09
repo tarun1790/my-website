@@ -174,3 +174,4 @@
 - [2025-05-07T16:41:03+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-05-07T16:59:31+05:30] style(buttons): refine hover states and active button feedback
 - [2025-05-08T21:02:25+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-05-09T18:41:46+05:30] style(typography): update font scale and line-height balance
