@@ -177,3 +177,4 @@
 - [2025-05-09T18:41:46+05:30] style(typography): update font scale and line-height balance
 - [2025-05-09T20:41:49+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-05-12T16:39:48+05:30] fix(forms): resolve autofocus issue on contact input fields
+- [2025-05-13T20:46:47+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
