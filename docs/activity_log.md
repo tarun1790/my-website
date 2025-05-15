@@ -180,3 +180,4 @@
 - [2025-05-13T20:46:47+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-05-13T21:23:27+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-05-14T10:32:55+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-05-15T09:58:16+05:30] perf(assets): implement responsive srcset image optimization
