@@ -184,3 +184,4 @@
 - [2025-05-16T11:20:40+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-05-16T18:33:13+05:30] style(typography): update font scale and line-height balance
 - [2025-05-16T18:47:09+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-05-16T20:02:30+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
