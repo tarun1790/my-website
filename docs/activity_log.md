@@ -188,3 +188,4 @@
 - [2025-05-16T21:20:12+05:30] style(buttons): refine hover states and active button feedback
 - [2025-05-20T17:50:24+05:30] style(buttons): refine hover states and active button feedback
 - [2025-05-20T17:59:04+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-05-22T13:48:35+05:30] style(theme): refine dark mode color tokens and contrast ratios
