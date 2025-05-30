@@ -191,3 +191,4 @@
 - [2025-05-22T13:48:35+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-05-29T09:53:53+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-05-29T20:24:34+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-05-30T09:32:05+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
