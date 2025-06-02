@@ -193,3 +193,4 @@
 - [2025-05-29T20:24:34+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-05-30T09:32:05+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-05-30T10:15:56+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2025-06-02T12:22:52+05:30] style(theme): refine dark mode color tokens and contrast ratios
