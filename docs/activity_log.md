@@ -199,3 +199,4 @@
 - [2025-06-04T15:26:50+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-06-04T20:55:06+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-06-05T16:37:15+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-06-06T11:22:54+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
