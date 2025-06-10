@@ -201,3 +201,4 @@
 - [2025-06-05T16:37:15+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-06-06T11:22:54+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-06-07T17:13:25+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-06-10T10:04:42+05:30] perf(bundle): remove unused dependencies and reduce vendor size
