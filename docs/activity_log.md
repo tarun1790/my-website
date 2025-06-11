@@ -203,3 +203,4 @@
 - [2025-06-07T17:13:25+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-06-10T10:04:42+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-06-10T17:18:08+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-06-11T13:30:55+05:30] perf(cache): configure service worker asset caching strategy
