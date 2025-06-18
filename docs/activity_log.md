@@ -207,3 +207,4 @@
 - [2025-06-12T12:29:47+05:30] style(typography): update font scale and line-height balance
 - [2025-06-13T12:26:07+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-06-18T15:52:58+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-06-18T17:48:23+05:30] style(buttons): refine hover states and active button feedback
