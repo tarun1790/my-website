@@ -209,3 +209,4 @@
 - [2025-06-18T15:52:58+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-06-18T17:48:23+05:30] style(buttons): refine hover states and active button feedback
 - [2025-06-20T11:37:29+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-06-20T15:06:49+05:30] perf(assets): implement responsive srcset image optimization
