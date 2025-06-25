@@ -212,3 +212,4 @@
 - [2025-06-20T15:06:49+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-06-24T09:58:42+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-06-24T19:29:16+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-06-25T19:01:10+05:30] perf(cache): configure service worker asset caching strategy
