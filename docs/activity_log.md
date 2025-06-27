@@ -215,3 +215,4 @@
 - [2025-06-25T19:01:10+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-06-26T13:40:53+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-06-26T19:21:05+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-06-27T10:01:38+05:30] style(typography): update font scale and line-height balance
