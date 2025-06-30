@@ -218,3 +218,4 @@
 - [2025-06-27T10:01:38+05:30] style(typography): update font scale and line-height balance
 - [2025-06-27T13:00:04+05:30] style(typography): update font scale and line-height balance
 - [2025-06-27T17:51:06+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2025-06-30T19:40:01+05:30] docs(readme): add installation guide and local setup instructions
