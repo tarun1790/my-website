@@ -223,3 +223,4 @@
 - [2025-07-02T19:25:54+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-07-03T20:15:29+05:30] style(typography): update font scale and line-height balance
 - [2025-07-07T09:26:47+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-07-07T19:57:19+05:30] feat(animation): implement smooth scroll reveal transitions
