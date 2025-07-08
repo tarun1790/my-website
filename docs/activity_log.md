@@ -225,3 +225,4 @@
 - [2025-07-07T09:26:47+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-07-07T19:57:19+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-07-08T09:50:39+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-07-08T15:26:09+05:30] style(theme): refine dark mode color tokens and contrast ratios
