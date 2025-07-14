@@ -229,3 +229,4 @@
 - [2025-07-10T17:12:29+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-07-10T17:27:23+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-07-10T17:42:24+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-07-14T09:00:58+05:30] perf(assets): implement responsive srcset image optimization
