@@ -231,3 +231,4 @@
 - [2025-07-10T17:42:24+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-07-14T09:00:58+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-07-15T10:16:52+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-07-15T18:32:21+05:30] style(theme): refine dark mode color tokens and contrast ratios
