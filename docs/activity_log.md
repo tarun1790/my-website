@@ -236,3 +236,4 @@
 - [2025-07-16T13:59:59+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-07-16T18:27:58+05:30] style(buttons): refine hover states and active button feedback
 - [2025-07-16T19:01:20+05:30] style(buttons): refine hover states and active button feedback
+- [2025-07-17T10:26:20+05:30] perf(cache): configure service worker asset caching strategy
