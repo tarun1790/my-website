@@ -237,3 +237,4 @@
 - [2025-07-16T18:27:58+05:30] style(buttons): refine hover states and active button feedback
 - [2025-07-16T19:01:20+05:30] style(buttons): refine hover states and active button feedback
 - [2025-07-17T10:26:20+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-07-22T21:10:50+05:30] docs(readme): add installation guide and local setup instructions
