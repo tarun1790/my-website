@@ -242,3 +242,4 @@
 - [2025-07-24T11:38:08+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-07-28T09:27:30+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-07-28T12:04:26+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-07-28T21:10:45+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
