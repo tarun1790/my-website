@@ -243,3 +243,4 @@
 - [2025-07-28T09:27:30+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-07-28T12:04:26+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-07-28T21:10:45+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-07-29T12:40:51+05:30] perf(bundle): remove unused dependencies and reduce vendor size
