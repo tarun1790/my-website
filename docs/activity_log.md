@@ -247,3 +247,4 @@
 - [2025-07-29T17:37:59+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-07-30T13:12:18+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-08-06T15:53:51+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2025-08-07T11:18:59+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
