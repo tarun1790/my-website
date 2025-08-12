@@ -249,3 +249,4 @@
 - [2025-08-06T15:53:51+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-08-07T11:18:59+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-08-07T15:01:38+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-08-12T16:48:08+05:30] feat(animation): implement smooth scroll reveal transitions
