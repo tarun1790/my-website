@@ -255,3 +255,4 @@
 - [2025-08-18T09:53:30+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-08-18T18:34:50+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-08-18T18:47:45+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-08-19T21:16:04+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
