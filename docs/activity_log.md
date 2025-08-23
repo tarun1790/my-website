@@ -257,3 +257,4 @@
 - [2025-08-18T18:47:45+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-08-19T21:16:04+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-08-22T17:13:08+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-08-23T15:14:40+05:30] style(typography): update font scale and line-height balance
