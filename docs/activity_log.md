@@ -260,3 +260,4 @@
 - [2025-08-23T15:14:40+05:30] style(typography): update font scale and line-height balance
 - [2025-08-25T16:09:29+05:30] style(typography): update font scale and line-height balance
 - [2025-08-25T20:04:36+05:30] style(theme): refine dark mode color tokens and contrast ratios
+- [2025-08-26T21:10:54+05:30] feat(animation): implement smooth scroll reveal transitions
