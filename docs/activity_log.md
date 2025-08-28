@@ -263,3 +263,4 @@
 - [2025-08-26T21:10:54+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-08-27T13:11:27+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-08-28T12:15:44+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-08-28T13:16:20+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
