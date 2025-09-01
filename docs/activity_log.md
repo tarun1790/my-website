@@ -266,3 +266,4 @@
 - [2025-08-28T13:16:20+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-08-29T13:42:33+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-09-01T14:17:21+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-09-01T15:51:07+05:30] docs(readme): add installation guide and local setup instructions
