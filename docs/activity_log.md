@@ -267,3 +267,4 @@
 - [2025-08-29T13:42:33+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-09-01T14:17:21+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-09-01T15:51:07+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-09-02T14:22:56+05:30] feat(animation): implement smooth scroll reveal transitions
