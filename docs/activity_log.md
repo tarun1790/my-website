@@ -269,3 +269,4 @@
 - [2025-09-01T15:51:07+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-09-02T14:22:56+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-09-03T16:21:09+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-09-06T15:26:36+05:30] style(typography): update font scale and line-height balance
