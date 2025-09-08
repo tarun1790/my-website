@@ -270,3 +270,4 @@
 - [2025-09-02T14:22:56+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-09-03T16:21:09+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-09-06T15:26:36+05:30] style(typography): update font scale and line-height balance
+- [2025-09-08T15:01:03+05:30] refactor(layout): simplify CSS grid layout hierarchy
