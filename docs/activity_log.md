@@ -272,3 +272,4 @@
 - [2025-09-06T15:26:36+05:30] style(typography): update font scale and line-height balance
 - [2025-09-08T15:01:03+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-09-09T09:21:41+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-09-10T09:01:32+05:30] perf(cache): configure service worker asset caching strategy
