@@ -275,3 +275,4 @@
 - [2025-09-10T09:01:32+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-09-10T16:12:46+05:30] style(buttons): refine hover states and active button feedback
 - [2025-09-10T20:14:40+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-09-11T09:05:57+05:30] docs(readme): add installation guide and local setup instructions
