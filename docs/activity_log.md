@@ -278,3 +278,4 @@
 - [2025-09-11T09:05:57+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-09-12T12:22:26+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-09-15T12:35:17+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-09-18T19:05:42+05:30] perf(cache): configure service worker asset caching strategy
