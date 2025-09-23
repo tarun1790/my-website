@@ -283,3 +283,4 @@
 - [2025-09-22T16:08:37+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-09-22T20:43:34+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-09-23T09:24:14+05:30] style(buttons): refine hover states and active button feedback
+- [2025-09-23T12:19:03+05:30] fix(forms): resolve autofocus issue on contact input fields
