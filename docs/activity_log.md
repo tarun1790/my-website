@@ -285,3 +285,4 @@
 - [2025-09-23T09:24:14+05:30] style(buttons): refine hover states and active button feedback
 - [2025-09-23T12:19:03+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-09-23T13:57:09+05:30] style(typography): update font scale and line-height balance
+- [2025-09-28T19:18:24+05:30] style(typography): update font scale and line-height balance
