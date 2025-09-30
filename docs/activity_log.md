@@ -291,3 +291,4 @@
 - [2025-09-30T14:23:14+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-09-30T14:35:51+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-09-30T19:38:31+05:30] style(buttons): refine hover states and active button feedback
+- [2025-09-30T19:41:59+05:30] perf(bundle): remove unused dependencies and reduce vendor size
