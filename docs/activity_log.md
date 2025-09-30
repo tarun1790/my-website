@@ -287,3 +287,4 @@
 - [2025-09-23T13:57:09+05:30] style(typography): update font scale and line-height balance
 - [2025-09-28T19:18:24+05:30] style(typography): update font scale and line-height balance
 - [2025-09-29T19:39:50+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-09-30T14:06:42+05:30] feat(animation): implement smooth scroll reveal transitions
