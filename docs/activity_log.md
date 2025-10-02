@@ -294,3 +294,4 @@
 - [2025-09-30T19:41:59+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-10-02T13:26:46+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-10-02T19:49:56+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-10-02T21:33:17+05:30] style(theme): refine dark mode color tokens and contrast ratios
