@@ -293,3 +293,4 @@
 - [2025-09-30T19:38:31+05:30] style(buttons): refine hover states and active button feedback
 - [2025-09-30T19:41:59+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-10-02T13:26:46+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-10-02T19:49:56+05:30] perf(assets): implement responsive srcset image optimization
