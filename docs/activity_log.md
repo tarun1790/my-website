@@ -298,3 +298,4 @@
 - [2025-10-03T18:17:08+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-10-06T10:33:21+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-10-06T13:50:44+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-10-06T18:13:00+05:30] style(buttons): refine hover states and active button feedback
