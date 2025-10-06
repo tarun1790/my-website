@@ -296,3 +296,4 @@
 - [2025-10-02T19:49:56+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-10-02T21:33:17+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-10-03T18:17:08+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-10-06T10:33:21+05:30] feat(nav): add responsive mobile drawer navigation menu
