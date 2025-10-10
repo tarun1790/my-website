@@ -301,3 +301,4 @@
 - [2025-10-06T18:13:00+05:30] style(buttons): refine hover states and active button feedback
 - [2025-10-07T13:40:21+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-10-09T12:46:00+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-10-10T09:11:38+05:30] style(theme): refine dark mode color tokens and contrast ratios
