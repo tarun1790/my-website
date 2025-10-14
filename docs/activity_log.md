@@ -305,3 +305,4 @@
 - [2025-10-10T17:37:05+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-10-10T18:16:31+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-10-13T15:09:56+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-10-14T09:35:42+05:30] fix(forms): resolve autofocus issue on contact input fields
