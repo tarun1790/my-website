@@ -309,3 +309,4 @@
 - [2025-10-14T10:13:19+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-10-16T09:42:08+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-10-18T18:23:11+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-10-20T17:43:26+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
