@@ -312,3 +312,4 @@
 - [2025-10-20T17:43:26+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-10-20T18:28:28+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-10-20T20:01:33+05:30] fix(forms): resolve autofocus issue on contact input fields
+- [2025-10-22T13:20:12+05:30] fix(forms): resolve autofocus issue on contact input fields
