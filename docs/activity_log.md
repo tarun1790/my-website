@@ -317,3 +317,4 @@
 - [2025-10-24T09:48:33+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-10-24T16:06:08+05:30] style(buttons): refine hover states and active button feedback
 - [2025-10-24T20:27:16+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-10-24T21:56:11+05:30] fix(forms): resolve autofocus issue on contact input fields
