@@ -316,3 +316,4 @@
 - [2025-10-23T19:31:43+05:30] style(buttons): refine hover states and active button feedback
 - [2025-10-24T09:48:33+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-10-24T16:06:08+05:30] style(buttons): refine hover states and active button feedback
+- [2025-10-24T20:27:16+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
