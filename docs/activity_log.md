@@ -314,3 +314,4 @@
 - [2025-10-20T20:01:33+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-10-22T13:20:12+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-10-23T19:31:43+05:30] style(buttons): refine hover states and active button feedback
+- [2025-10-24T09:48:33+05:30] style(theme): refine dark mode color tokens and contrast ratios
