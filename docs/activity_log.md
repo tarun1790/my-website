@@ -320,3 +320,4 @@
 - [2025-10-24T21:56:11+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-10-25T14:01:59+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-10-27T12:08:08+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-10-29T12:10:25+05:30] docs(readme): add installation guide and local setup instructions
