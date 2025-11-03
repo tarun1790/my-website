@@ -323,3 +323,4 @@
 - [2025-10-29T12:10:25+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-10-31T20:04:33+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-11-03T10:30:21+05:30] style(buttons): refine hover states and active button feedback
+- [2025-11-03T13:14:39+05:30] perf(cache): configure service worker asset caching strategy
