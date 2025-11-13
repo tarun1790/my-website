@@ -330,3 +330,4 @@
 - [2025-11-06T16:16:35+05:30] style(buttons): refine hover states and active button feedback
 - [2025-11-07T20:26:59+05:30] style(typography): update font scale and line-height balance
 - [2025-11-07T20:53:12+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-11-13T21:52:53+05:30] perf(cache): configure service worker asset caching strategy
