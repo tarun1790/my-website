@@ -333,3 +333,4 @@
 - [2025-11-13T21:52:53+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-11-14T09:45:44+05:30] docs(readme): add installation guide and local setup instructions
 - [2025-11-14T16:54:02+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-11-14T20:58:07+05:30] style(theme): refine dark mode color tokens and contrast ratios
