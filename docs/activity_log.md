@@ -331,3 +331,4 @@
 - [2025-11-07T20:26:59+05:30] style(typography): update font scale and line-height balance
 - [2025-11-07T20:53:12+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-11-13T21:52:53+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-11-14T09:45:44+05:30] docs(readme): add installation guide and local setup instructions
