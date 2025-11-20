@@ -336,3 +336,4 @@
 - [2025-11-14T20:58:07+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-11-19T10:04:53+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-11-19T18:05:53+05:30] fix(forms): resolve autofocus issue on contact input fields
+- [2025-11-20T12:48:21+05:30] perf(assets): implement responsive srcset image optimization
