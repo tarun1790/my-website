@@ -339,3 +339,4 @@
 - [2025-11-20T12:48:21+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-11-20T13:41:48+05:30] style(typography): update font scale and line-height balance
 - [2025-11-21T09:28:44+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-11-21T18:24:41+05:30] style(typography): update font scale and line-height balance
