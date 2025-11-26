@@ -343,3 +343,4 @@
 - [2025-11-21T20:24:32+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-11-24T15:23:31+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-11-25T17:55:40+05:30] docs(readme): add installation guide and local setup instructions
+- [2025-11-26T15:10:29+05:30] feat(animation): implement smooth scroll reveal transitions
