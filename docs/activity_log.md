@@ -347,3 +347,4 @@
 - [2025-11-27T12:34:32+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-11-28T15:03:48+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-11-30T21:44:05+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-12-01T12:37:59+05:30] fix(forms): resolve autofocus issue on contact input fields
