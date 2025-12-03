@@ -348,3 +348,4 @@
 - [2025-11-28T15:03:48+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-11-30T21:44:05+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-12-01T12:37:59+05:30] fix(forms): resolve autofocus issue on contact input fields
+- [2025-12-03T10:25:31+05:30] perf(bundle): remove unused dependencies and reduce vendor size
