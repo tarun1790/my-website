@@ -352,3 +352,4 @@
 - [2025-12-03T17:26:49+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-12-03T18:26:01+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-12-04T11:01:01+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-12-04T17:50:27+05:30] style(theme): refine dark mode color tokens and contrast ratios
