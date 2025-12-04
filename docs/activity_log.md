@@ -351,3 +351,4 @@
 - [2025-12-03T10:25:31+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-03T17:26:49+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-12-03T18:26:01+05:30] perf(assets): implement responsive srcset image optimization
+- [2025-12-04T11:01:01+05:30] feat(animation): implement smooth scroll reveal transitions
