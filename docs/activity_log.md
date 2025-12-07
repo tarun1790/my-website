@@ -354,3 +354,4 @@
 - [2025-12-04T11:01:01+05:30] feat(animation): implement smooth scroll reveal transitions
 - [2025-12-04T17:50:27+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-12-05T18:01:24+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-12-07T11:15:56+05:30] style(buttons): refine hover states and active button feedback
