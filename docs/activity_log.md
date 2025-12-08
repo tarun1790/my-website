@@ -355,3 +355,4 @@
 - [2025-12-04T17:50:27+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-12-05T18:01:24+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-12-07T11:15:56+05:30] style(buttons): refine hover states and active button feedback
+- [2025-12-08T09:56:57+05:30] perf(cache): configure service worker asset caching strategy
