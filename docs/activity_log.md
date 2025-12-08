@@ -358,3 +358,4 @@
 - [2025-12-08T09:56:57+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-12-08T12:37:39+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-12-08T16:18:20+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-12-08T19:31:44+05:30] style(typography): update font scale and line-height balance
