@@ -360,3 +360,4 @@
 - [2025-12-08T16:18:20+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-12-08T19:31:44+05:30] style(typography): update font scale and line-height balance
 - [2025-12-10T09:51:17+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2025-12-11T09:28:35+05:30] feat(nav): add responsive mobile drawer navigation menu
