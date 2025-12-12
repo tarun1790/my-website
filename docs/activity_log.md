@@ -362,3 +362,4 @@
 - [2025-12-10T09:51:17+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-11T09:28:35+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-12-11T20:30:50+05:30] feat(nav): add responsive mobile drawer navigation menu
+- [2025-12-12T16:56:58+05:30] feat(nav): add responsive mobile drawer navigation menu
