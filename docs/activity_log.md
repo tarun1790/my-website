@@ -366,3 +366,4 @@
 - [2025-12-13T18:40:45+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-14T11:06:15+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-12-15T12:55:31+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2025-12-15T13:02:34+05:30] feat(animation): implement smooth scroll reveal transitions
