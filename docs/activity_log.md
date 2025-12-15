@@ -365,3 +365,4 @@
 - [2025-12-12T16:56:58+05:30] feat(nav): add responsive mobile drawer navigation menu
 - [2025-12-13T18:40:45+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-14T11:06:15+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-12-15T12:55:31+05:30] perf(bundle): remove unused dependencies and reduce vendor size
