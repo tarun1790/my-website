@@ -370,3 +370,4 @@
 - [2025-12-16T15:23:17+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-16T16:01:05+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-12-16T16:03:26+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
+- [2025-12-16T16:23:54+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
