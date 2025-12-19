@@ -376,3 +376,4 @@
 - [2025-12-17T20:12:53+05:30] feat(seo): add OpenGraph metadata tags and canonical URLs
 - [2025-12-17T21:29:15+05:30] perf(assets): implement responsive srcset image optimization
 - [2025-12-19T09:08:29+05:30] perf(bundle): remove unused dependencies and reduce vendor size
+- [2025-12-19T10:38:35+05:30] style(theme): refine dark mode color tokens and contrast ratios
