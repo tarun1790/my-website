@@ -378,3 +378,4 @@
 - [2025-12-19T09:08:29+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-19T10:38:35+05:30] style(theme): refine dark mode color tokens and contrast ratios
 - [2025-12-19T19:39:06+05:30] style(typography): update font scale and line-height balance
+- [2025-12-20T20:45:10+05:30] style(typography): update font scale and line-height balance
