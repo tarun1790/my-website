@@ -385,3 +385,4 @@
 - [2025-12-23T11:48:53+05:30] style(typography): update font scale and line-height balance
 - [2025-12-23T12:16:35+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-12-24T09:46:35+05:30] feat(animation): implement smooth scroll reveal transitions
+- [2025-12-24T11:44:09+05:30] perf(bundle): remove unused dependencies and reduce vendor size
