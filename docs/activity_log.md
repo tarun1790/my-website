@@ -384,3 +384,4 @@
 - [2025-12-23T10:50:47+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-12-23T11:48:53+05:30] style(typography): update font scale and line-height balance
 - [2025-12-23T12:16:35+05:30] fix(forms): resolve autofocus issue on contact input fields
+- [2025-12-24T09:46:35+05:30] feat(animation): implement smooth scroll reveal transitions
