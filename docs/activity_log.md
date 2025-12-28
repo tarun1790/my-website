@@ -388,3 +388,4 @@
 - [2025-12-24T11:44:09+05:30] perf(bundle): remove unused dependencies and reduce vendor size
 - [2025-12-24T16:37:06+05:30] refactor(layout): simplify CSS grid layout hierarchy
 - [2025-12-26T18:38:41+05:30] perf(cache): configure service worker asset caching strategy
+- [2025-12-28T17:35:23+05:30] fix(forms): resolve autofocus issue on contact input fields
