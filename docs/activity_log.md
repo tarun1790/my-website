@@ -390,3 +390,4 @@
 - [2025-12-26T18:38:41+05:30] perf(cache): configure service worker asset caching strategy
 - [2025-12-28T17:35:23+05:30] fix(forms): resolve autofocus issue on contact input fields
 - [2025-12-29T16:24:27+05:30] refactor(layout): simplify CSS grid layout hierarchy
+- [2025-12-31T18:39:17+05:30] style(typography): update font scale and line-height balance
