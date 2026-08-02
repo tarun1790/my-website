@@ -103,7 +103,7 @@ function initTypingEffect() {
     "AI Agent Memory & LLM Architect",
     "Cyber Security & Reverse Engineering Specialist",
     "Open Source Software Developer (16 Repos)",
-    "Machine Learning & Telemetry Specialist"
+    "Generative AI & Data Analytics Specialist"
   ];
 
   let roleIndex = 0;
@@ -269,12 +269,12 @@ Available Commands:
         break;
       case 'certs':
         appendLine(`
-<span class="t-cyan">=== CERTIFICATIONS ===</span>
-[1] Machine Learning & Deep Learning Specialization (DeepLearning.AI)
-[2] Full-Stack Software Engineering Professional (Meta)
-[3] AI Agent Systems & LLM Memory Architecture
-[4] Cyber Security & Authorized Penetration Testing
-[5] Python Data Science & Algorithmic Problem Solving
+<span class="t-cyan">=== VERIFIED TECHNICAL CERTIFICATIONS ===</span>
+[1] Generative AI by Google Cloud (Google Skills Platform / L4G - 22 Skill Badges)
+[2] DSA for DeepTech Bootcamp (Brainovision & AICTE - ID: DSA-BOV-ANJ-115)
+[3] Data Science & Analytics (HP LIFE Foundation - ID: be1a3624-1bc9-423e-b154-1ae50e840435)
+[4] Agile Scrum in Practice (Infosys Springboard)
+[5] Marketing and Communications (IBMI Berlin - ID: 1285623-177-909-8922)
 `);
         break;
       case 'contact':
@@ -348,7 +348,7 @@ const skillsDataset = [
   { name: 'REST APIs & WebSockets', category: 'frameworks', level: 90, icon: 'fa-network-wired', catLabel: 'Frameworks' },
 
   { name: 'PyTorch & Neural Nets', category: 'ai', level: 92, icon: 'fa-brain', catLabel: 'AI & ML' },
-  { name: 'AI Agent Memory / GraphRAG', category: 'ai', level: 95, icon: 'fa-robot', catLabel: 'AI & ML' },
+  { name: 'Generative AI & LLMs', category: 'ai', level: 95, icon: 'fa-robot', catLabel: 'AI & ML' },
   { name: 'XGBoost & Scikit-Learn', category: 'ai', level: 88, icon: 'fa-chart-line', catLabel: 'AI & ML' },
   { name: 'Anomaly Detection & Telemetry', category: 'ai', level: 90, icon: 'fa-wave-square', catLabel: 'AI & ML' },
 
@@ -533,7 +533,7 @@ function renderCertifications() {
       <div class="cert-meta-row">
         <span><i class="fa-regular fa-calendar-check"></i> Issued ${escapeHtml(c.date)}</span>
         <a href="${c.verificationUrl}" target="_blank" rel="noopener" class="btn-outline" style="padding: 4px 12px; font-size: 0.8rem;" onclick="event.stopPropagation();">
-          Verify LinkedIn / Credential <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Verify Credential <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
     `;
@@ -644,7 +644,7 @@ function openCertModal(c) {
 
     <div style="display:flex; justify-content:center;">
       <a href="${c.verificationUrl}" target="_blank" rel="noopener" class="btn-primary">
-        <i class="fa-solid fa-shield-check"></i> View Verification / LinkedIn Details
+        <i class="fa-solid fa-shield-check"></i> View Verification / Certificate Details
       </a>
     </div>
   `;
@@ -669,7 +669,7 @@ function openUploadCertModal() {
 
       <div class="form-group">
         <label>Issuing Organization / Provider</label>
-        <input type="text" id="add-cert-issuer" required placeholder="e.g. Amazon Web Services / LinkedIn Learning">
+        <input type="text" id="add-cert-issuer" required placeholder="e.g. Amazon Web Services / Infosys / Google">
       </div>
 
       <div class="form-group">
@@ -678,13 +678,13 @@ function openUploadCertModal() {
       </div>
 
       <div class="form-group">
-        <label>Verification URL or LinkedIn Certificate Link</label>
-        <input type="url" id="add-cert-url" required placeholder="https://www.linkedin.com/in/tarun-jampani-958329299/">
+        <label>Verification URL or Certificate Serial</label>
+        <input type="url" id="add-cert-url" required placeholder="https://verify.onwingspan.com">
       </div>
 
       <div class="form-group">
         <label>Skills Verified (comma separated)</label>
-        <input type="text" id="add-cert-skills" placeholder="e.g. Cloud Computing, Docker, Machine Learning">
+        <input type="text" id="add-cert-skills" placeholder="e.g. Cloud Computing, Generative AI, Agile Scrum">
       </div>
 
       <div class="form-group">
