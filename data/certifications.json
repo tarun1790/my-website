@@ -1,30 +1,6 @@
 [
   {
     "id": "cert-1",
-    "title": "Oracle Fusion AI Agent Studio Certified Foundations Associate",
-    "issuer": "Oracle University",
-    "date": "June 25, 2026",
-    "credentialId": "329176413OFAASOFA",
-    "badgeUrl": "assets/cert_badge.jpg",
-    "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
-    "skills": ["Oracle Fusion AI", "AI Agents", "Agent Studio", "Enterprise AI Architecture"],
-    "description": "Official Oracle Certified Foundations Associate credential recognizing mastery of Oracle Fusion AI Agent Studio design, LLM orchestration, and enterprise AI agent deployment.",
-    "category": "AI & ML"
-  },
-  {
-    "id": "cert-2",
-    "title": "Oracle AI Database Certified Foundations Associate",
-    "issuer": "Oracle University",
-    "date": "July 02, 2026",
-    "credentialId": "329176413OCI26DCFA",
-    "badgeUrl": "assets/cert_badge.jpg",
-    "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
-    "skills": ["Oracle AI Database", "Vector Search", "AI Database Foundations", "SQL & Autonomous DB"],
-    "description": "Official Oracle Corporation certification validating proficiency in Oracle AI Database capabilities, vector indexes, and AI-integrated database management.",
-    "category": "AI & ML"
-  },
-  {
-    "id": "cert-3",
     "title": "Generative AI by Google Cloud (22 Skill Badges)",
     "issuer": "Google Skills Platform / L4G",
     "date": "February 2026",
@@ -32,7 +8,31 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
     "skills": ["Generative AI", "Google Cloud Platform", "LLMs", "Prompt Engineering", "GAIL Pathways"],
-    "description": "45-hour intensive course covering Beginner, Advanced & Generative AI Leader (GAIL) Pathways on the Google Skills platform with 22 Skill Badges earned.",
+    "description": "45-hour intensive course covering Beginner, Advanced & Generative AI Leader (GAIL) Pathways on the Google Skills platform with 22 Skill Badges earned at R.V.R. & J.C. College of Engineering.",
+    "category": "AI & ML"
+  },
+  {
+    "id": "cert-2",
+    "title": "Oracle Fusion AI Agent Studio Certified Foundations Associate",
+    "issuer": "Oracle University",
+    "date": "June 25, 2026",
+    "credentialId": "329176413OFAASOFA",
+    "badgeUrl": "assets/cert_badge.jpg",
+    "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
+    "skills": ["Oracle Fusion AI", "AI Agents", "Agent Studio", "Enterprise AI Architecture"],
+    "description": "Official Oracle Certified Foundations Associate recognition for Oracle Fusion AI Agent Studio Certified Foundations Associate Rel 1 by Oracle Corporation.",
+    "category": "AI & ML"
+  },
+  {
+    "id": "cert-3",
+    "title": "Oracle AI Database Certified Foundations Associate",
+    "issuer": "Oracle University",
+    "date": "July 02, 2026",
+    "credentialId": "329176413OCI26DCFA",
+    "badgeUrl": "assets/cert_badge.jpg",
+    "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
+    "skills": ["Oracle AI Database", "Vector Search", "AI Database Foundations", "Autonomous DB"],
+    "description": "Official Oracle Certified Foundations Associate recognition for Oracle AI Database Certified Foundations Associate by Oracle Corporation.",
     "category": "AI & ML"
   },
   {
@@ -44,7 +44,7 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://nptel.ac.in/noc/",
     "skills": ["Incubation", "Entrepreneurship", "Product Lifecycle", "Business Models", "Elite 81%"],
-    "description": "Awarded Elite certification (score 81%) for completing a 12-week course on Incubation and Entrepreneurship conducted by IIT Bombay under NPTEL & MoE Govt. of India.",
+    "description": "Awarded Elite certification (consolidated score 81%) for completing the 12-week course 'Understanding Incubation and Entrepreneurship' conducted by IIT Bombay under NPTEL & MoE Govt. of India.",
     "category": "Full-Stack Web"
   },
   {
@@ -56,19 +56,19 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
     "skills": ["Data Structures", "Algorithms", "DeepTech Applications", "Problem Solving"],
-    "description": "International Level Bootcamp on Data Structures & Algorithms for DeepTech Applications organized by Brainovision Solutions in association with AICTE.",
+    "description": "International Level Bootcamp on Data Structures & Algorithms for DeepTech Applications organized by Brainovision Solutions in association with AICTE, hosted by Anjuman Institute of Technology and Management.",
     "category": "Data Science"
   },
   {
     "id": "cert-6",
     "title": "Data Science & Analytics",
     "issuer": "HP LIFE | HP Foundation",
-    "date": "June 2026",
+    "date": "June 24, 2026",
     "credentialId": "be1a3624-1bc9-423e-b154-1ae50e840435",
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://www.linkedin.com/in/tarun-jampani-958329299/details/certifications/",
     "skills": ["Data Science", "Analytics Practices", "Data Visualization", "Data-Driven Analytics"],
-    "description": "Comprehensive course covering leading data science methodologies, analytics tools, and data-driven decision making techniques.",
+    "description": "Official HP LIFE online course completion certificate covering leading data science practices, methodologies, analytics tools, and data-driven decision making.",
     "category": "Data Science"
   },
   {
@@ -80,7 +80,7 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://verify.onwingspan.com",
     "skills": ["Python 3", "Programming Logic", "Data Types", "Control Structures"],
-    "description": "Official Infosys Springboard course completion certificate covering core programming concepts and algorithm implementation in Python.",
+    "description": "Official Infosys Springboard course completion certificate for successfully completing Programming Fundamentals using Python - Part 1.",
     "category": "Data Science"
   },
   {
@@ -92,7 +92,7 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://verify.onwingspan.com",
     "skills": ["Python OOP", "Data Structures", "Functions & Modules", "Error Handling"],
-    "description": "Advanced Python programming certification covering object-oriented design, custom data structures, and modular software design.",
+    "description": "Official Infosys Springboard course completion certificate for successfully completing Programming Fundamentals using Python - Part 2.",
     "category": "Data Science"
   },
   {
@@ -104,7 +104,7 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://verify.onwingspan.com",
     "skills": ["Agile Scrum", "Sprint Planning", "Software Lifecycle", "Project Management"],
-    "description": "Official Infosys Springboard certification covering Agile Scrum framework, iterative delivery, and modern project management practices.",
+    "description": "Official Infosys Springboard course completion certificate for successfully completing Agile Scrum in Practice.",
     "category": "Full-Stack Web"
   },
   {
@@ -116,7 +116,7 @@
     "badgeUrl": "assets/cert_badge.jpg",
     "verificationUrl": "https://www.ibm-institute.com/verify",
     "skills": ["Strategic Marketing", "Communications", "Brand Strategy", "Business Intelligence"],
-    "description": "Certified by IBMI Berlin, Germany, covering strategic business communications, brand positioning, and digital marketing principles.",
+    "description": "Official Certificate of Recognition awarded by International Business Management Institute (IBMI) Berlin, Germany for meeting requirements in Marketing and Communications.",
     "category": "Full-Stack Web"
   }
 ]

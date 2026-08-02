@@ -1,5 +1,6 @@
 /* ==========================================================================
    TARUN JAMPANI PORTFOLIO INTERACTIVE LOGIC (script.js)
+   Theme: High-Contrast Red, Black & White Aesthetics
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. CANVAS AMBIENT PARTICLE CONSTELLATION
+   1. CANVAS AMBIENT PARTICLE CONSTELLATION (Red & White Nodes)
    ========================================================================== */
 function initCanvasBackground() {
   const canvas = document.getElementById('bg-canvas');
@@ -45,7 +46,7 @@ function initCanvasBackground() {
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
       radius: Math.random() * 1.8 + 0.8,
-      color: Math.random() > 0.5 ? 'rgba(0, 242, 254, ' : 'rgba(56, 189, 248, '
+      color: Math.random() > 0.4 ? 'rgba(255, 30, 39, ' : 'rgba(255, 255, 255, '
     });
   }
 
@@ -65,7 +66,7 @@ function initCanvasBackground() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = p.color + '0.6)';
+      ctx.fillStyle = p.color + '0.7)';
       ctx.fill();
 
       // Connect nearby particles
@@ -79,7 +80,7 @@ function initCanvasBackground() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - dist / 130)})`;
+          ctx.strokeStyle = `rgba(255, 30, 39, ${0.2 * (1 - dist / 130)})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -205,6 +206,7 @@ function initTerminal() {
 <span class="t-purple">Frameworks:</span> PyTorch, Next.js, React, Node.js, Express, Tailwind
 <span class="t-purple">Status:</span> <span class="t-green">[ONLINE]</span> Building Next-Gen AI Apps
 <span class="t-purple">GitHub Stats:</span> 16 Public Repos | 14 Open Source Projects
+<span class="t-purple">Certifications:</span> 10 Verified Real Certificates (Oracle, Google, NPTEL, HP, Infosys, IBMI)
 <span class="t-purple">Contact:</span> tarun.jampani45@gmail.com | linkedin.com/in/tarun-jampani-958329299
 ----------------------------------------------------
 `;
@@ -269,12 +271,17 @@ Available Commands:
         break;
       case 'certs':
         appendLine(`
-<span class="t-cyan">=== VERIFIED TECHNICAL CERTIFICATIONS ===</span>
+<span class="t-cyan">=== VERIFIED TECHNICAL CERTIFICATIONS (10 REAL) ===</span>
 [1] Generative AI by Google Cloud (Google Skills Platform / L4G - 22 Skill Badges)
-[2] DSA for DeepTech Bootcamp (Brainovision & AICTE - ID: DSA-BOV-ANJ-115)
-[3] Data Science & Analytics (HP LIFE Foundation - ID: be1a3624-1bc9-423e-b154-1ae50e840435)
-[4] Agile Scrum in Practice (Infosys Springboard)
-[5] Marketing and Communications (IBMI Berlin - ID: 1285623-177-909-8922)
+[2] Oracle Fusion AI Agent Studio Certified Foundations Associate (Oracle University - ID: 329176413OFAASOFA)
+[3] Oracle AI Database Certified Foundations Associate (Oracle University - ID: 329176413OCI26DCFA)
+[4] NPTEL Elite Certification: Incubation & Entrepreneurship (IIT Bombay & MoE - Score: 81%)
+[5] DSA for DeepTech Bootcamp (Brainovision & AICTE - ID: DSA-BOV-ANJ-115)
+[6] Data Science & Analytics (HP LIFE Foundation - Serial: be1a3624-1bc9-423e-b154-1ae50e840435)
+[7] Programming Fundamentals using Python - Part 1 (Infosys Springboard)
+[8] Programming Fundamentals using Python - Part 2 (Infosys Springboard)
+[9] Agile Scrum in Practice (Infosys Springboard)
+[10] Marketing and Communications (IBMI Berlin, Germany - ID: 1285623-177-909-8922)
 `);
         break;
       case 'contact':
@@ -582,7 +589,7 @@ function openProjectModal(p) {
       <div class="project-icon-box" style="width: 60px; height: 60px; font-size: 1.8rem;"><i class="fa-solid ${p.icon || 'fa-code'}"></i></div>
       <div>
         <h2 style="font-family: var(--font-title); font-size: 1.8rem;">${escapeHtml(p.title)}</h2>
-        <span style="color: var(--accent-cyan); font-family: var(--font-code); font-size: 0.9rem;">${escapeHtml(p.name)}</span>
+        <span style="color: var(--accent-red); font-family: var(--font-code); font-size: 0.9rem;">${escapeHtml(p.name)}</span>
       </div>
     </div>
 
@@ -591,13 +598,13 @@ function openProjectModal(p) {
     </p>
 
     <div style="margin-bottom: 24px;">
-      <h4 style="margin-bottom: 10px; color: var(--text-main);">Tech Stack & Topics</h4>
+      <h4 style="margin-bottom: 10px; color: #ffffff;">Tech Stack & Topics</h4>
       <div class="project-tags">${tagsHtml}</div>
     </div>
 
-    <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 10px; font-family: var(--font-code); margin-bottom: 24px;">
+    <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--accent-red); padding: 16px; border-radius: 10px; font-family: var(--font-code); margin-bottom: 24px;">
       <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 6px;">Git Clone URL:</div>
-      <div style="display:flex; justify-content:space-between; align-items:center; color: var(--accent-cyan);">
+      <div style="display:flex; justify-content:space-between; align-items:center; color: #ffffff;">
         <span>git clone ${p.url}.git</span>
         <button class="copy-small-btn" data-copy="git clone ${p.url}.git" title="Copy"><i class="fa-regular fa-copy"></i></button>
       </div>
@@ -623,9 +630,9 @@ function openCertModal(c) {
 
   body.innerHTML = `
     <div style="text-align:center; margin-bottom: 24px;">
-      <img src="${c.badgeUrl || 'assets/cert_badge.jpg'}" alt="Certificate Badge" style="width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 2px solid var(--accent-blue); margin-bottom: 16px;" onerror="this.src='assets/cert_badge.jpg'">
-      <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 6px;">${escapeHtml(c.title)}</h2>
-      <span style="color: var(--accent-blue); font-weight: 600;">${escapeHtml(c.issuer)}</span>
+      <img src="${c.badgeUrl || 'assets/cert_badge.jpg'}" alt="Certificate Badge" style="width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 2px solid var(--accent-red); margin-bottom: 16px;" onerror="this.src='assets/cert_badge.jpg'">
+      <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 6px; color: #ffffff;">${escapeHtml(c.title)}</h2>
+      <span style="color: var(--accent-red); font-weight: 700;">${escapeHtml(c.issuer)}</span>
     </div>
 
     <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
@@ -633,11 +640,11 @@ function openCertModal(c) {
     </p>
 
     <div style="margin-bottom: 20px;">
-      <h4 style="margin-bottom: 8px;">Verified Skills:</h4>
+      <h4 style="margin-bottom: 8px; color: #ffffff;">Verified Skills:</h4>
       <div class="cert-skills-wrap">${skillsTags}</div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.9rem; color: var(--text-secondary);">
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 30, 39, 0.3); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.9rem; color: var(--text-secondary);">
       <div><strong>Credential ID:</strong> ${escapeHtml(c.credentialId || 'Verified')}</div>
       <div><strong>Issue Date:</strong> ${escapeHtml(c.date)}</div>
     </div>
@@ -658,7 +665,7 @@ function openUploadCertModal() {
   if (!modal || !body) return;
 
   body.innerHTML = `
-    <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 16px;"><i class="fa-solid fa-file-arrow-up"></i> Upload / Add Certification</h2>
+    <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 16px; color: #ffffff;"><i class="fa-solid fa-file-arrow-up" style="color: var(--accent-red);"></i> Upload / Add Certification</h2>
     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">Add a new technical certificate or credential to your portfolio showcase.</p>
 
     <form id="new-cert-form">
@@ -669,7 +676,7 @@ function openUploadCertModal() {
 
       <div class="form-group">
         <label>Issuing Organization / Provider</label>
-        <input type="text" id="add-cert-issuer" required placeholder="e.g. Amazon Web Services / Infosys / Google">
+        <input type="text" id="add-cert-issuer" required placeholder="e.g. Oracle / Infosys / Google">
       </div>
 
       <div class="form-group">
@@ -764,7 +771,7 @@ function showToast(message) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i> <span>${escapeHtml(message)}</span>`;
+  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--accent-red);"></i> <span>${escapeHtml(message)}</span>`;
 
   container.appendChild(toast);
 
