@@ -205,7 +205,7 @@ function initTerminal() {
 <span class="t-purple">Frameworks:</span> PyTorch, Next.js, React, Node.js, Express, Tailwind
 <span class="t-purple">Status:</span> <span class="t-green">[ONLINE]</span> Building Next-Gen AI Apps
 <span class="t-purple">GitHub Stats:</span> 35+ Public Repos | 1,850+ Commits | 150+ Stars
-<span class="t-purple">Contact:</span> tarun.jampani45@gmail.com | github.com/tarun1790
+<span class="t-purple">Contact:</span> tarun.jampani45@gmail.com | linkedin.com/in/tarun-jampani-958329299
 ----------------------------------------------------
 `;
 
@@ -282,7 +282,7 @@ Available Commands:
 <span class="t-cyan">=== CONTACT INFORMATION ===</span>
 Email:     tarun.jampani45@gmail.com
 GitHub:    https://github.com/tarun1790
-LinkedIn:  https://linkedin.com/in/tarun1790
+LinkedIn:  https://www.linkedin.com/in/tarun-jampani-958329299/
 Discord:   tarun1790
 `);
         break;
@@ -533,7 +533,7 @@ function renderCertifications() {
       <div class="cert-meta-row">
         <span><i class="fa-regular fa-calendar-check"></i> Issued ${escapeHtml(c.date)}</span>
         <a href="${c.verificationUrl}" target="_blank" rel="noopener" class="btn-outline" style="padding: 4px 12px; font-size: 0.8rem;" onclick="event.stopPropagation();">
-          Verify <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Verify LinkedIn / Credential <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
     `;
@@ -644,7 +644,7 @@ function openCertModal(c) {
 
     <div style="display:flex; justify-content:center;">
       <a href="${c.verificationUrl}" target="_blank" rel="noopener" class="btn-primary">
-        <i class="fa-solid fa-shield-check"></i> Official Verification Link
+        <i class="fa-solid fa-shield-check"></i> View Verification / LinkedIn Details
       </a>
     </div>
   `;
@@ -669,7 +669,7 @@ function openUploadCertModal() {
 
       <div class="form-group">
         <label>Issuing Organization / Provider</label>
-        <input type="text" id="add-cert-issuer" required placeholder="e.g. Amazon Web Services / Coursera">
+        <input type="text" id="add-cert-issuer" required placeholder="e.g. Amazon Web Services / LinkedIn Learning">
       </div>
 
       <div class="form-group">
@@ -678,13 +678,13 @@ function openUploadCertModal() {
       </div>
 
       <div class="form-group">
-        <label>Verification URL or GitHub Link</label>
-        <input type="url" id="add-cert-url" required placeholder="https://coursera.org/verify/...">
+        <label>Verification URL or LinkedIn Certificate Link</label>
+        <input type="url" id="add-cert-url" required placeholder="https://www.linkedin.com/in/tarun-jampani-958329299/">
       </div>
 
       <div class="form-group">
         <label>Skills Verified (comma separated)</label>
-        <input type="text" id="add-cert-skills" placeholder="e.g. Cloud Computing, Docker, DevOps">
+        <input type="text" id="add-cert-skills" placeholder="e.g. Cloud Computing, Docker, Machine Learning">
       </div>
 
       <div class="form-group">
