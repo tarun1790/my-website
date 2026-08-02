@@ -1,6 +1,6 @@
 /* ==========================================================================
    TARUN JAMPANI PORTFOLIO DESIGN SYSTEM & STYLESHEET
-   Aesthetic: Black & White Theme with Authentic Colorful Icons & Neon Borders
+   Aesthetic: Black, White & Light Blue Only (Zero Pink)
    ========================================================================== */
 
 :root {
@@ -11,9 +11,11 @@
 
   --accent-white: #ffffff;
   --accent-blue: #38bdf8;
-  --accent-pink: #f472b6;
-  --accent-purple: #a855f7;
-  --accent-green: #22c55e;
+  --accent-blue-light: #7dd3fc;
+  --accent-blue-dark: #0284c7;
+
+  --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --gradient-accent: linear-gradient(135deg, #ffffff 0%, #38bdf8 60%, #0284c7 100%);
 
   --text-main: #ffffff;
   --text-secondary: #e0e0e0;
@@ -52,14 +54,14 @@ body {
 }
 
 a {
-  color: #ffffff;
+  color: #38bdf8;
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: var(--transition-fast);
 }
 
 a:hover {
-  color: #38bdf8;
+  color: #7dd3fc;
 }
 
 button, input, textarea {
@@ -67,7 +69,7 @@ button, input, textarea {
 }
 
 /* ==========================================================================
-   AUTHENTIC ORIGINAL BRAND COLORS FOR ALL ICONS (Python, React, Node, etc.)
+   AUTHENTIC ORIGINAL BRAND COLORS FOR ICONS
    ========================================================================== */
 i.fa-python, .fa-python { color: #3776ab !important; }
 i.fa-js, .fa-js { color: #f7df1e !important; }
@@ -82,23 +84,23 @@ i.fa-linkedin, .fa-linkedin { color: #0a66c2 !important; }
 i.fa-discord, .fa-discord { color: #5865f2 !important; }
 i.fa-envelope, .fa-envelope { color: #ea4335 !important; }
 i.fa-location-dot, .fa-location-dot { color: #ef4444 !important; }
-i.fa-brain, .fa-brain { color: #a855f7 !important; }
-i.fa-robot, .fa-robot { color: #00f2fe !important; }
+i.fa-brain, .fa-brain { color: #38bdf8 !important; }
+i.fa-robot, .fa-robot { color: #38bdf8 !important; }
 i.fa-shield-halved, i.fa-shield-check, .fa-shield-halved, .fa-shield-check { color: #10b981 !important; }
 i.fa-certificate, i.fa-award, .fa-certificate, .fa-award { color: #f59e0b !important; }
-i.fa-folder-open, .fa-folder-open { color: #6366f1 !important; }
-i.fa-code-fork, .fa-code-fork { color: #ec4899 !important; }
+i.fa-folder-open, .fa-folder-open { color: #38bdf8 !important; }
+i.fa-code-fork, .fa-code-fork { color: #38bdf8 !important; }
 i.fa-user-astronaut, i.fa-user, .fa-user-astronaut, .fa-user { color: #38bdf8 !important; }
 i.fa-terminal, .fa-terminal { color: #22c55e !important; }
 i.fa-database, .fa-database { color: #00758f !important; }
 i.fa-layer-group, .fa-layer-group { color: #3b82f6 !important; }
 i.fa-paper-plane, .fa-paper-plane { color: #06b6d4 !important; }
-i.fa-compass, .fa-compass { color: #8b5cf6 !important; }
+i.fa-compass, .fa-compass { color: #38bdf8 !important; }
 i.fa-book-bookmark, .fa-book-bookmark { color: #f97316 !important; }
-i.fa-diagram-project, .fa-diagram-project { color: #ec4899 !important; }
-i.fa-palette, .fa-palette { color: #f43f5e !important; }
+i.fa-diagram-project, .fa-diagram-project { color: #38bdf8 !important; }
+i.fa-palette, .fa-palette { color: #38bdf8 !important; }
 i.fa-network-wired, .fa-network-wired { color: #14b8a6 !important; }
-i.fa-wave-square, .fa-wave-square { color: #8b5cf6 !important; }
+i.fa-wave-square, .fa-wave-square { color: #38bdf8 !important; }
 i.fa-chart-line, .fa-chart-line { color: #10b981 !important; }
 i.fa-linux, .fa-linux { color: #fcc624 !important; }
 i.fa-code, .fa-code { color: #38bdf8 !important; }
@@ -140,7 +142,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   font-family: var(--font-code);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--accent-blue);
+  color: #38bdf8;
   letter-spacing: 3px;
   text-transform: uppercase;
   display: block;
@@ -166,13 +168,13 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 .section-line {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #38bdf8, #f472b6, #a855f7);
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
   margin: 0 auto;
   border-radius: 2px;
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
 }
 
-/* Glassmorphism Panel & Colorful Borders */
+/* Glassmorphism Panel & Light Blue Borders */
 .glass-panel {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
@@ -188,10 +190,10 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.9), 0 0 25px rgba(56, 189, 248, 0.4);
 }
 
-/* CLEAN, SHARP, ELEGANT TEXT FOR TARUN JAMPANI (NO BLURRY GLOW) */
+/* CLEAN, SHARP LIGHT BLUE TYPOGRAPHY FOR TARUN JAMPANI */
 .gradient-text {
   color: #ffffff !important;
-  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 60%, #f472b6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 60%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none !important;
@@ -244,7 +246,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 }
 
 .logo-highlight {
-  color: #f472b6;
+  color: #7dd3fc;
 }
 
 .nav-menu {
@@ -359,7 +361,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   max-width: 900px;
 }
 
-/* BIG CENTERED PHOTO WITH NEON COLORFUL BORDER */
+/* BIG CENTERED PHOTO WITH LIGHT BLUE BORDER */
 .hero-avatar-card {
   display: flex;
   flex-direction: column;
@@ -375,7 +377,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   height: 320px;
   border-radius: 50%;
   padding: 6px;
-  background: linear-gradient(135deg, #38bdf8 0%, #f472b6 50%, #a855f7 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 60%, #0284c7 100%);
   box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
   animation: floatAvatar 4s ease-in-out infinite;
 }
@@ -432,29 +434,29 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid #22c55e;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid #38bdf8;
   padding: 6px 18px;
   border-radius: 30px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #22c55e;
+  color: #38bdf8;
   margin-bottom: 20px;
 }
 
 .green-pulse {
   width: 8px;
   height: 8px;
-  background-color: #22c55e;
+  background-color: #38bdf8;
   border-radius: 50%;
-  box-shadow: 0 0 10px #22c55e;
-  animation: pulseGreen 2s infinite;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: pulseBlue 2s infinite;
 }
 
-@keyframes pulseGreen {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+@keyframes pulseBlue {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.8); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
 }
 
 /* HERO TITLE CLEAN & SHARP */
@@ -479,7 +481,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 }
 
 .typing-prefix {
-  color: #f472b6;
+  color: #7dd3fc;
   font-weight: 700;
 }
 
@@ -548,25 +550,25 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #38bdf8 0%, #f472b6 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
   color: #000000;
   box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(244, 114, 182, 0.6);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
   color: #000000;
 }
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border: 1px solid #f472b6;
+  border: 1px solid #38bdf8;
 }
 
 .btn-secondary:hover {
-  background: #f472b6;
+  background: #38bdf8;
   color: #000000;
   transform: translateY(-3px);
 }
@@ -641,7 +643,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 .wheel {
   width: 4px;
   height: 8px;
-  background: #f472b6;
+  background: #38bdf8;
   border-radius: 2px;
   position: absolute;
   top: 6px;
@@ -722,7 +724,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-color: rgba(244, 114, 182, 0.3);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 .stat-icon {
@@ -776,9 +778,9 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   border-radius: 50%;
 }
 
-.btn-close { background: #ef4444; }
-.btn-minimize { background: #eab308; }
-.btn-maximize { background: #22c55e; }
+.btn-close { background: #38bdf8; }
+.btn-minimize { background: #7dd3fc; }
+.btn-maximize { background: #0284c7; }
 
 .terminal-title {
   font-family: var(--font-code);
@@ -825,9 +827,9 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 }
 
 .t-cyan { color: #38bdf8; font-weight: 700; }
-.t-green { color: #22c55e; font-weight: 700; }
-.t-yellow { color: #facc15; }
-.t-purple { color: #c084fc; font-weight: 700; }
+.t-green { color: #38bdf8; font-weight: 700; }
+.t-yellow { color: #7dd3fc; }
+.t-purple { color: #38bdf8; font-weight: 700; }
 
 .terminal-input-row {
   display: flex;
@@ -839,7 +841,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 }
 
 .t-prompt {
-  color: #f472b6;
+  color: #38bdf8;
   font-weight: 700;
   margin-right: 8px;
   white-space: nowrap;
@@ -981,7 +983,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 
 .skill-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
   border-radius: 3px;
   width: 0%;
   transition: width 1s ease-in-out;
@@ -1064,12 +1066,12 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   justify-content: space-between;
   position: relative;
   cursor: pointer;
-  border-color: rgba(244, 114, 182, 0.25);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 .project-card:hover {
-  border-color: #f472b6;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.9), 0 0 25px rgba(244, 114, 182, 0.35);
+  border-color: #38bdf8;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.9), 0 0 25px rgba(56, 189, 248, 0.35);
 }
 
 .project-top-row {
@@ -1083,8 +1085,8 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: rgba(244, 114, 182, 0.12);
-  border: 1px solid #f472b6;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid #38bdf8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1134,9 +1136,9 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 .p-tag {
   font-family: var(--font-code);
   font-size: 0.75rem;
-  background: rgba(244, 114, 182, 0.1);
-  border: 1px solid rgba(244, 114, 182, 0.3);
-  color: #fbcfe8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #7dd3fc;
   padding: 3px 8px;
   border-radius: 6px;
 }
@@ -1215,7 +1217,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 
 .cert-issuer {
   font-size: 0.85rem;
-  color: #f472b6;
+  color: #38bdf8;
   font-weight: 700;
 }
 
@@ -1266,7 +1268,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
   left: 28px;
   height: 100%;
   width: 3px;
-  background: linear-gradient(180deg, #38bdf8, #f472b6);
+  background: linear-gradient(180deg, #38bdf8, #0284c7);
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
@@ -1301,7 +1303,7 @@ i.fa-code, .fa-code { color: #38bdf8 !important; }
 .timeline-date {
   font-family: var(--font-code);
   font-size: 0.85rem;
-  color: #f472b6;
+  color: #38bdf8;
   font-weight: 700;
 }
 
