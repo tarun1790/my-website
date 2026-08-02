@@ -102,7 +102,7 @@ function initTypingEffect() {
     "Full-Stack Engineer & AI Developer",
     "AI Agent Memory & LLM Architect",
     "Cyber Security & Reverse Engineering Specialist",
-    "Open Source Contributor (1,850+ Commits)",
+    "Open Source Software Developer (16 Repos)",
     "Machine Learning & Telemetry Specialist"
   ];
 
@@ -198,13 +198,13 @@ function initTerminal() {
 <span class="t-cyan">tarun@tarun1790</span>
 ----------------------------------------------------
 <span class="t-purple">OS:</span> Windows 11 / Linux (Ubuntu)
-<span class="t-purple">Uptime:</span> 21 years, 8 months
+<span class="t-purple">Uptime:</span> Active on GitHub since Dec 2023
 <span class="t-purple">Host:</span> Custom AI Engineering Workstation
 <span class="t-purple">Role:</span> Full-Stack Engineer & AI Developer
 <span class="t-purple">Languages:</span> Python, TypeScript, JavaScript, C++, SQL, HTML5/CSS3
 <span class="t-purple">Frameworks:</span> PyTorch, Next.js, React, Node.js, Express, Tailwind
 <span class="t-purple">Status:</span> <span class="t-green">[ONLINE]</span> Building Next-Gen AI Apps
-<span class="t-purple">GitHub Stats:</span> 35+ Public Repos | 1,850+ Commits | 150+ Stars
+<span class="t-purple">GitHub Stats:</span> 16 Public Repos | 14 Open Source Projects
 <span class="t-purple">Contact:</span> tarun.jampani45@gmail.com | linkedin.com/in/tarun-jampani-958329299
 ----------------------------------------------------
 `;
@@ -470,7 +470,7 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
           <span class="lang-dot"></span>
           <span>${escapeHtml(p.language)}</span>
         </div>
-        <div><i class="fa-regular fa-star"></i> ${p.stars || 0} Stars</div>
+        <div><i class="fa-brands fa-github-alt"></i> Open Source</div>
       </div>
     `;
 

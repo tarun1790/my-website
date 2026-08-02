@@ -11,6 +11,12 @@ A long-scrolling, high-performance web portfolio highlighting projects, certific
 - **Technical Skills Matrix**: Categorized tech stack grid featuring proficiency indicators across Languages, Frameworks, AI/ML tools, Systems, and Security.
 - **Responsive Dark Glassmorphism Design**: Custom CSS design system with backdrop blur filters, cyber neon accents, sleek typography, and mobile drawer navigation.
 
+## 📊 Real GitHub Statistics
+
+- **Public Repositories**: 16
+- **Open Source Project Repos**: 14
+- **Active on GitHub**: Since Dec 2023
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, Vanilla JavaScript (ES6+), Vanilla CSS3 (Custom Glassmorphic System)
