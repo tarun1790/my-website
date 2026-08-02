@@ -1,7 +1,6 @@
 /* ==========================================================================
    TARUN JAMPANI PORTFOLIO DESIGN SYSTEM & STYLESHEET
-   Aesthetic: Black & White Theme, Authentic Colorful Icons & Neon Borders
-   Clean, Sharp & Attractive Typography (No Blurry Glow on Text)
+   Aesthetic: Black & White Theme with Authentic Colorful Icons & Neon Borders
    ========================================================================== */
 
 :root {
@@ -68,41 +67,41 @@ button, input, textarea {
 }
 
 /* ==========================================================================
-   AUTHENTIC ORIGINAL BRAND COLORS FOR ICONS
+   AUTHENTIC ORIGINAL BRAND COLORS FOR ALL ICONS (Python, React, Node, etc.)
    ========================================================================== */
-i.fa-python { color: #3776ab !important; }
-i.fa-js { color: #f7df1e !important; }
-i.fa-react { color: #61dafb !important; }
-i.fa-node-js { color: #339933 !important; }
-i.fa-html5 { color: #e34f26 !important; }
-i.fa-css3, i.fa-css3-alt { color: #1572b6 !important; }
-i.fa-docker { color: #2496ed !important; }
-i.fa-git-alt, i.fa-git { color: #f05032 !important; }
-i.fa-github, i.fa-github-alt { color: #ffffff !important; }
-i.fa-linkedin { color: #0a66c2 !important; }
-i.fa-discord { color: #5865f2 !important; }
-i.fa-envelope { color: #ea4335 !important; }
-i.fa-location-dot { color: #ef4444 !important; }
-i.fa-brain { color: #a855f7 !important; }
-i.fa-robot { color: #00f2fe !important; }
-i.fa-shield-halved, i.fa-shield-check { color: #10b981 !important; }
-i.fa-certificate, i.fa-award { color: #f59e0b !important; }
-i.fa-folder-open { color: #6366f1 !important; }
-i.fa-code-fork { color: #ec4899 !important; }
-i.fa-user-astronaut, i.fa-user { color: #38bdf8 !important; }
-i.fa-terminal { color: #22c55e !important; }
-i.fa-database { color: #00758f !important; }
-i.fa-layer-group { color: #3b82f6 !important; }
-i.fa-paper-plane { color: #06b6d4 !important; }
-i.fa-compass { color: #8b5cf6 !important; }
-i.fa-book-bookmark { color: #f97316 !important; }
-i.fa-diagram-project { color: #ec4899 !important; }
-i.fa-palette { color: #f43f5e !important; }
-i.fa-network-wired { color: #14b8a6 !important; }
-i.fa-wave-square { color: #8b5cf6 !important; }
-i.fa-chart-line { color: #10b981 !important; }
-i.fa-linux { color: #fcc624 !important; }
-i.fa-code { color: #38bdf8 !important; }
+i.fa-python, .fa-python { color: #3776ab !important; }
+i.fa-js, .fa-js { color: #f7df1e !important; }
+i.fa-react, .fa-react { color: #61dafb !important; }
+i.fa-node-js, .fa-node-js { color: #339933 !important; }
+i.fa-html5, .fa-html5 { color: #e34f26 !important; }
+i.fa-css3, i.fa-css3-alt, .fa-css3, .fa-css3-alt { color: #1572b6 !important; }
+i.fa-docker, .fa-docker { color: #2496ed !important; }
+i.fa-git-alt, i.fa-git, .fa-git-alt, .fa-git { color: #f05032 !important; }
+i.fa-github, i.fa-github-alt, .fa-github { color: #ffffff !important; }
+i.fa-linkedin, .fa-linkedin { color: #0a66c2 !important; }
+i.fa-discord, .fa-discord { color: #5865f2 !important; }
+i.fa-envelope, .fa-envelope { color: #ea4335 !important; }
+i.fa-location-dot, .fa-location-dot { color: #ef4444 !important; }
+i.fa-brain, .fa-brain { color: #a855f7 !important; }
+i.fa-robot, .fa-robot { color: #00f2fe !important; }
+i.fa-shield-halved, i.fa-shield-check, .fa-shield-halved, .fa-shield-check { color: #10b981 !important; }
+i.fa-certificate, i.fa-award, .fa-certificate, .fa-award { color: #f59e0b !important; }
+i.fa-folder-open, .fa-folder-open { color: #6366f1 !important; }
+i.fa-code-fork, .fa-code-fork { color: #ec4899 !important; }
+i.fa-user-astronaut, i.fa-user, .fa-user-astronaut, .fa-user { color: #38bdf8 !important; }
+i.fa-terminal, .fa-terminal { color: #22c55e !important; }
+i.fa-database, .fa-database { color: #00758f !important; }
+i.fa-layer-group, .fa-layer-group { color: #3b82f6 !important; }
+i.fa-paper-plane, .fa-paper-plane { color: #06b6d4 !important; }
+i.fa-compass, .fa-compass { color: #8b5cf6 !important; }
+i.fa-book-bookmark, .fa-book-bookmark { color: #f97316 !important; }
+i.fa-diagram-project, .fa-diagram-project { color: #ec4899 !important; }
+i.fa-palette, .fa-palette { color: #f43f5e !important; }
+i.fa-network-wired, .fa-network-wired { color: #14b8a6 !important; }
+i.fa-wave-square, .fa-wave-square { color: #8b5cf6 !important; }
+i.fa-chart-line, .fa-chart-line { color: #10b981 !important; }
+i.fa-linux, .fa-linux { color: #fcc624 !important; }
+i.fa-code, .fa-code { color: #38bdf8 !important; }
 
 /* Canvas Background */
 #bg-canvas {
