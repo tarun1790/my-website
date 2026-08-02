@@ -1,6 +1,6 @@
 /* ==========================================================================
    TARUN JAMPANI PORTFOLIO INTERACTIVE LOGIC (script.js)
-   Theme: Black, White, Light Blue & Light Pink Modern Glassmorphism
+   Theme: Strict Pure Black & White Monochrome
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. CANVAS AMBIENT PARTICLE CONSTELLATION (Light Blue & Light Pink Nodes)
+   1. CANVAS AMBIENT PARTICLE CONSTELLATION (Pure White Nodes Only)
    ========================================================================== */
 function initCanvasBackground() {
   const canvas = document.getElementById('bg-canvas');
@@ -46,7 +46,7 @@ function initCanvasBackground() {
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
       radius: Math.random() * 1.8 + 0.8,
-      color: Math.random() > 0.5 ? 'rgba(56, 189, 248, ' : 'rgba(244, 114, 182, '
+      color: 'rgba(255, 255, 255, '
     });
   }
 
@@ -80,7 +80,7 @@ function initCanvasBackground() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - dist / 130)})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - dist / 130)})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -588,8 +588,8 @@ function openProjectModal(p) {
     <div style="display:flex; align-items:center; gap: 16px; margin-bottom: 20px;">
       <div class="project-icon-box" style="width: 60px; height: 60px; font-size: 1.8rem;"><i class="fa-solid ${p.icon || 'fa-code'}"></i></div>
       <div>
-        <h2 style="font-family: var(--font-title); font-size: 1.8rem;">${escapeHtml(p.title)}</h2>
-        <span style="color: var(--accent-blue); font-family: var(--font-code); font-size: 0.9rem;">${escapeHtml(p.name)}</span>
+        <h2 style="font-family: var(--font-title); font-size: 1.8rem; color: #ffffff;">${escapeHtml(p.title)}</h2>
+        <span style="color: #ffffff; font-family: var(--font-code); font-size: 0.9rem;">${escapeHtml(p.name)}</span>
       </div>
     </div>
 
@@ -602,7 +602,7 @@ function openProjectModal(p) {
       <div class="project-tags">${tagsHtml}</div>
     </div>
 
-    <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--accent-blue); padding: 16px; border-radius: 10px; font-family: var(--font-code); margin-bottom: 24px;">
+    <div style="background: rgba(0,0,0,0.8); border: 1px solid #ffffff; padding: 16px; border-radius: 10px; font-family: var(--font-code); margin-bottom: 24px;">
       <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 6px;">Git Clone URL:</div>
       <div style="display:flex; justify-content:space-between; align-items:center; color: #ffffff;">
         <span>git clone ${p.url}.git</span>
@@ -630,9 +630,9 @@ function openCertModal(c) {
 
   body.innerHTML = `
     <div style="text-align:center; margin-bottom: 24px;">
-      <img src="${c.badgeUrl || 'assets/cert_badge.jpg'}" alt="Certificate Badge" style="width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 2px solid var(--accent-blue); margin-bottom: 16px;" onerror="this.src='assets/cert_badge.jpg'">
+      <img src="${c.badgeUrl || 'assets/cert_badge.jpg'}" alt="Certificate Badge" style="width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 2px solid #ffffff; margin-bottom: 16px;" onerror="this.src='assets/cert_badge.jpg'">
       <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 6px; color: #ffffff;">${escapeHtml(c.title)}</h2>
-      <span style="color: var(--accent-pink); font-weight: 700;">${escapeHtml(c.issuer)}</span>
+      <span style="color: #ffffff; font-weight: 700;">${escapeHtml(c.issuer)}</span>
     </div>
 
     <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
@@ -644,7 +644,7 @@ function openCertModal(c) {
       <div class="cert-skills-wrap">${skillsTags}</div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(56, 189, 248, 0.3); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.9rem; color: var(--text-secondary);">
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255, 255, 255, 0.3); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.9rem; color: var(--text-secondary);">
       <div><strong>Credential ID:</strong> ${escapeHtml(c.credentialId || 'Verified')}</div>
       <div><strong>Issue Date:</strong> ${escapeHtml(c.date)}</div>
     </div>
@@ -665,7 +665,7 @@ function openUploadCertModal() {
   if (!modal || !body) return;
 
   body.innerHTML = `
-    <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 16px; color: #ffffff;"><i class="fa-solid fa-file-arrow-up" style="color: var(--accent-pink);"></i> Upload / Add Certification</h2>
+    <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 16px; color: #ffffff;"><i class="fa-solid fa-file-arrow-up" style="color: #ffffff;"></i> Upload / Add Certification</h2>
     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">Add a new technical certificate or credential to your portfolio showcase.</p>
 
     <form id="new-cert-form">
@@ -771,7 +771,7 @@ function showToast(message) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--accent-blue);"></i> <span>${escapeHtml(message)}</span>`;
+  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff;"></i> <span>${escapeHtml(message)}</span>`;
 
   container.appendChild(toast);
 
