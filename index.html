@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarun Jampani | Full-Stack Engineer & AI Developer</title>
-  <meta name="description" content="Official portfolio and engineering showcase of Tarun Jampani (tarun1790). Full-Stack Engineer & AI Developer specializing in AI Agents, Machine Learning, Reverse Engineering, and Web Systems.">
-  <meta name="keywords" content="Tarun Jampani, tarun1790, Full Stack Engineer, AI Developer, Machine Learning, Python, TypeScript, Portfolio, Security, AI Agents">
+  <meta name="description" content="Official 3D Interactive portfolio and engineering showcase of Tarun Jampani (tarun1790). Full-Stack Engineer & AI Developer specializing in AI Agents, Machine Learning, Reverse Engineering, and Web Systems.">
+  <meta name="keywords" content="Tarun Jampani, tarun1790, Full Stack Engineer, AI Developer, 3D Portfolio, Three.js, Machine Learning, Python, TypeScript, Security, AI Agents">
   <meta name="author" content="Tarun Jampani">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tarun Jampani | Full-Stack Engineer & AI Developer">
-  <meta property="og:description" content="Explore projects, technical achievements, AI agent architectures, and certifications by Tarun Jampani.">
+  <meta property="og:title" content="Tarun Jampani | 3D Full-Stack Engineer & AI Showcase">
+  <meta property="og:description" content="Explore interactive 3D projects, technical achievements, AI agent architectures, and verified certifications by Tarun Jampani.">
   <meta property="og:image" content="assets/tarun_profile.jpg">
   <meta property="og:url" content="https://tarun1790.github.io/my-website/">
 
@@ -23,14 +23,28 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Stylesheet with Cache-Buster v8.0 -->
-  <link rel="stylesheet" href="styles.css?v=8.0">
+  <!-- Three.js 3D WebGL Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- Direct Style Override Block: Black/White Theme + Light Blue Only (Zero Pink) -->
+  <!-- Stylesheet with Cache-Buster v9.0 -->
+  <link rel="stylesheet" href="styles.css?v=9.0">
+
+  <!-- Direct Style Override Block: Ultra-Modern 3D Cyber Theme + Authentic Icons -->
   <style>
     body {
-      background-color: #000000 !important;
+      background-color: #030712 !important;
       color: #ffffff !important;
+    }
+
+    /* 3D WebGL Background Canvas */
+    #three-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
     }
 
     /* Title Typography */
@@ -41,14 +55,14 @@
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #ffffff 0%, #38bdf8 60%, #7dd3fc 100%) !important;
+      background: linear-gradient(135deg, #ffffff 0%, #00f2fe 50%, #38bdf8 100%) !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       text-shadow: none !important;
       filter: none !important;
     }
 
-    /* Authentic Brand Colored Icons (No Pink) */
+    /* Authentic Brand Colored Icons */
     i.fa-python, .fa-python { color: #3776ab !important; }
     i.fa-js, .fa-js { color: #f7df1e !important; }
     i.fa-react, .fa-react { color: #61dafb !important; }
@@ -61,81 +75,81 @@
     i.fa-discord, .fa-discord { color: #5865f2 !important; }
     i.fa-envelope, .fa-envelope { color: #ea4335 !important; }
     i.fa-location-dot, .fa-location-dot { color: #ef4444 !important; }
-    i.fa-brain, .fa-brain { color: #38bdf8 !important; }
-    i.fa-robot, .fa-robot { color: #38bdf8 !important; }
+    i.fa-brain, .fa-brain { color: #00f2fe !important; }
+    i.fa-robot, .fa-robot { color: #00f2fe !important; }
     i.fa-shield-halved, i.fa-shield-check, .fa-shield-halved, .fa-shield-check { color: #10b981 !important; }
     i.fa-certificate, i.fa-award, .fa-certificate, .fa-award { color: #f59e0b !important; }
-    i.fa-folder-open, .fa-folder-open { color: #38bdf8 !important; }
-    i.fa-code-fork, .fa-code-fork { color: #38bdf8 !important; }
-    i.fa-user-astronaut, i.fa-user, .fa-user-astronaut, .fa-user { color: #38bdf8 !important; }
+    i.fa-folder-open, .fa-folder-open { color: #00f2fe !important; }
+    i.fa-code-fork, .fa-code-fork { color: #00f2fe !important; }
+    i.fa-user-astronaut, i.fa-user, .fa-user-astronaut, .fa-user { color: #00f2fe !important; }
     i.fa-terminal, .fa-terminal { color: #22c55e !important; }
     i.fa-database, .fa-database { color: #00758f !important; }
-    i.fa-layer-group, .fa-layer-group { color: #3b82f6 !important; }
-    i.fa-paper-plane, .fa-paper-plane { color: #06b6d4 !important; }
+    i.fa-layer-group, .fa-layer-group { color: #38bdf8 !important; }
+    i.fa-paper-plane, .fa-paper-plane { color: #00f2fe !important; }
     i.fa-compass, .fa-compass { color: #38bdf8 !important; }
     i.fa-book-bookmark, .fa-book-bookmark { color: #f97316 !important; }
-    i.fa-cubes, .fa-cubes { color: #38bdf8 !important; }
+    i.fa-cubes, .fa-cubes { color: #00f2fe !important; }
     i.fa-screwdriver-wrench, .fa-screwdriver-wrench { color: #f59e0b !important; }
-    i.fa-laptop-code, .fa-laptop-code { color: #38bdf8 !important; }
+    i.fa-laptop-code, .fa-laptop-code { color: #00f2fe !important; }
 
-    /* Light Blue Borders & Glow Effects */
+    /* 3D Glassmorphism & Neon Cyan Borders */
     .avatar-glow-ring {
-      background: linear-gradient(135deg, #ffffff 0%, #38bdf8 60%, #0284c7 100%) !important;
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.5) !important;
+      background: linear-gradient(135deg, #ffffff 0%, #00f2fe 50%, #0284c7 100%) !important;
+      box-shadow: 0 0 50px rgba(0, 242, 254, 0.6) !important;
     }
 
     .glass-panel:hover {
-      border-color: #38bdf8 !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.9), 0 0 25px rgba(56, 189, 248, 0.4) !important;
+      border-color: #00f2fe !important;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 35px rgba(0, 242, 254, 0.45) !important;
     }
 
     .project-card:hover {
-      border-color: #38bdf8 !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.9), 0 0 25px rgba(56, 189, 248, 0.4) !important;
+      border-color: #00f2fe !important;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 35px rgba(0, 242, 254, 0.45) !important;
     }
 
     .cert-card:hover {
-      border-color: #38bdf8 !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.9), 0 0 25px rgba(56, 189, 248, 0.4) !important;
+      border-color: #00f2fe !important;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 35px rgba(0, 242, 254, 0.45) !important;
     }
 
     .status-pill {
-      background: rgba(56, 189, 248, 0.12) !important;
-      border: 1px solid #38bdf8 !important;
-      color: #38bdf8 !important;
+      background: rgba(0, 242, 254, 0.12) !important;
+      border: 1px solid #00f2fe !important;
+      color: #00f2fe !important;
     }
 
     .p-tag {
-      background: rgba(56, 189, 248, 0.1) !important;
-      border: 1px solid rgba(56, 189, 248, 0.3) !important;
+      background: rgba(0, 242, 254, 0.1) !important;
+      border: 1px solid rgba(0, 242, 254, 0.3) !important;
       color: #7dd3fc !important;
     }
 
     .c-skill-tag {
-      background: rgba(56, 189, 248, 0.1) !important;
-      border: 1px solid rgba(56, 189, 248, 0.3) !important;
+      background: rgba(0, 242, 254, 0.1) !important;
+      border: 1px solid rgba(0, 242, 254, 0.3) !important;
       color: #7dd3fc !important;
     }
 
     .cert-issuer {
-      color: #38bdf8 !important;
+      color: #00f2fe !important;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
+      background: linear-gradient(135deg, #00f2fe 0%, #0284c7 100%) !important;
       color: #000000 !important;
       font-weight: 800 !important;
     }
 
     .btn-secondary {
-      border-color: #38bdf8 !important;
+      border-color: #00f2fe !important;
     }
   </style>
 </head>
 <body class="dark-theme">
 
-  <!-- Canvas Ambient Particle Background -->
-  <canvas id="bg-canvas"></canvas>
+  <!-- Three.js 3D WebGL Background Canvas -->
+  <canvas id="three-canvas"></canvas>
 
   <!-- Dynamic Navigation Bar -->
   <header id="main-header" class="header-glass">
@@ -165,15 +179,15 @@
   </header>
 
   <main>
-    <!-- HERO SECTION (CENTERED WITH BIG PHOTO IN MIDDLE) -->
+    <!-- HERO SECTION (CENTERED WITH 3D PROFILE PHOTO) -->
     <section id="hero" class="hero-section">
       <div class="hero-backdrop" style="background-image: url('assets/hero_banner.jpg');"></div>
       <div class="hero-overlay"></div>
       
       <div class="section-container hero-wrapper">
         
-        <!-- BIG PHOTO IN MIDDLE -->
-        <div class="hero-avatar-card">
+        <!-- 3D CENTERED PROFILE CARD -->
+        <div class="hero-avatar-card tilt-card-3d">
           <div class="avatar-glow-ring">
             <img src="assets/tarun_profile.jpg" alt="Tarun Jampani Official Photo" class="hero-avatar-img" id="user-profile-pic">
           </div>
@@ -187,7 +201,7 @@
         <div class="hero-content">
           <div class="status-pill">
             <span class="status-dot green-pulse"></span>
-            <span class="status-text">Available for AI & Full-Stack Projects</span>
+            <span class="status-text">Available for 3D & AI Full-Stack Engineering</span>
           </div>
 
           <h1 class="hero-title">
@@ -201,7 +215,7 @@
           </div>
 
           <p class="hero-description">
-            Passionate software engineer crafting autonomous AI agent architectures, intelligent machine learning models, resilient web platforms, and cybersecurity toolchains.
+            Passionate software engineer crafting 3D web experiences, autonomous AI agent architectures, intelligent machine learning models, resilient web platforms, and cybersecurity toolchains.
           </p>
 
           <div class="hero-badges">
@@ -269,45 +283,45 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-card glass-panel">
+          <div class="about-card glass-panel tilt-card-3d">
             <div class="card-header-icon">
               <i class="fa-solid fa-user-astronaut"></i>
             </div>
             <h3>Who I Am</h3>
             <p>
-              I am a versatile <strong>Full-Stack Engineer & AI Developer</strong> with deep domain expertise in building production-grade AI systems, agentic memory hubs, machine learning predictors, and full-stack web applications.
+              I am a versatile <strong>Full-Stack Engineer & AI Developer</strong> with deep domain expertise in building production-grade 3D web applications, AI agent systems, machine learning predictors, and high-performance backends.
             </p>
             <p>
-              Active on GitHub since 2023, I thrive at the intersection of AI model development, high-throughput backend services, and clean modern web interfaces.
+              Active on GitHub since 2023, I thrive at the intersection of 3D WebGL graphics, AI model development, high-throughput backend services, and clean modern web interfaces.
             </p>
             <div class="about-details-list">
-              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#38bdf8;"></i> <span><strong>Focus:</strong> AI Agents, GraphRAG, ML Pipelines, Web Apps</span></div>
-              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#38bdf8;"></i> <span><strong>Core Languages:</strong> Python, TypeScript, JavaScript, C++</span></div>
-              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#38bdf8;"></i> <span><strong>Primary OS:</strong> Windows 11 & Linux Systems</span></div>
-              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#38bdf8;"></i> <span><strong>Spoken Languages:</strong> English (Fluent), Telugu, Hindi</span></div>
+              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#00f2fe;"></i> <span><strong>Focus:</strong> 3D WebGL, AI Agents, GraphRAG, ML Pipelines</span></div>
+              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#00f2fe;"></i> <span><strong>Core Languages:</strong> Python, TypeScript, JavaScript, C++</span></div>
+              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#00f2fe;"></i> <span><strong>Primary OS:</strong> Windows 11 & Linux Systems</span></div>
+              <div class="detail-item"><i class="fa-solid fa-check-circle" style="color:#00f2fe;"></i> <span><strong>Spoken Languages:</strong> English (Fluent), Telugu, Hindi</span></div>
             </div>
           </div>
 
           <div class="about-stats-grid">
-            <div class="stat-box glass-panel">
+            <div class="stat-box glass-panel tilt-card-3d">
               <i class="fa-solid fa-folder-open stat-icon"></i>
               <div class="stat-number" id="stat-repos">16</div>
               <div class="stat-label">Public Repositories</div>
             </div>
 
-            <div class="stat-box glass-panel">
+            <div class="stat-box glass-panel tilt-card-3d">
               <i class="fa-solid fa-code-fork stat-icon"></i>
               <div class="stat-number" id="stat-projects">14</div>
               <div class="stat-label">Open Source Projects</div>
             </div>
 
-            <div class="stat-box glass-panel">
+            <div class="stat-box glass-panel tilt-card-3d">
               <i class="fa-solid fa-brain stat-icon"></i>
               <div class="stat-number" id="stat-ai">10</div>
               <div class="stat-label">AI & ML Repositories</div>
             </div>
 
-            <div class="stat-box glass-panel">
+            <div class="stat-box glass-panel tilt-card-3d">
               <i class="fa-solid fa-award stat-icon"></i>
               <div class="stat-number" id="stat-certs">10</div>
               <div class="stat-label">Tech Certifications</div>
@@ -327,7 +341,7 @@
           <div class="section-line"></div>
         </div>
 
-        <div class="terminal-window glass-panel">
+        <div class="terminal-window glass-panel tilt-card-3d">
           <div class="terminal-header">
             <div class="terminal-buttons">
               <span class="t-btn btn-close"></span>
@@ -392,7 +406,7 @@
         <div class="section-header">
           <span class="section-subtitle">OPEN SOURCE & ENGINEERING WORK</span>
           <h2 class="section-title">GitHub Projects</h2>
-          <p class="section-desc">All repositories created and maintained by Tarun Jampani. Click any project card to open full details and GitHub repository.</p>
+          <p class="section-desc">All repositories created and maintained by Tarun Jampani. Hover over any card for interactive 3D tilt response.</p>
           <div class="section-line"></div>
         </div>
 
@@ -422,7 +436,7 @@
         <div class="section-header">
           <span class="section-subtitle">VERIFIED CREDENTIALS & ACHIEVEMENTS</span>
           <h2 class="section-title">Certifications (10)</h2>
-          <p class="section-desc">Verified certifications and technical credentials from Oracle, Google Cloud, NPTEL/IIT Bombay, Infosys, HP LIFE & IBMI Berlin. Click any card to inspect details or add new credentials.</p>
+          <p class="section-desc">Verified certifications and technical credentials from Oracle, Google Cloud, NPTEL/IIT Bombay, Infosys, HP LIFE & IBMI Berlin.</p>
           <div class="section-line"></div>
         </div>
 
@@ -450,7 +464,7 @@
         <div class="timeline-wrapper">
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-brain"></i></div>
-            <div class="timeline-content glass-panel">
+            <div class="timeline-content glass-panel tilt-card-3d">
               <span class="timeline-date">2025 - Present</span>
               <h3>Architecting TencentDB Agent Memory & Reverse Skill</h3>
               <p>Developed autonomous agent memory frameworks enabling stateful LLM multi-agent governance (Chat Memory, Skill, LLM-Wiki, Code-Graph) and specialized AI router packs for security penetration testing.</p>
@@ -459,7 +473,7 @@
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-microchip"></i></div>
-            <div class="timeline-content glass-panel">
+            <div class="timeline-content glass-panel tilt-card-3d">
               <span class="timeline-date">2024</span>
               <h3>Industrial AI & Predictive Telemetry Systems</h3>
               <p>Engineered predictive maintenance and anomaly detection pipelines for IoT sensor streams and atmospheric AQI forecasting using Deep Learning, LSTM, and XGBoost architectures.</p>
@@ -468,7 +482,7 @@
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-globe"></i></div>
-            <div class="timeline-content glass-panel">
+            <div class="timeline-content glass-panel tilt-card-3d">
               <span class="timeline-date">2024</span>
               <h3>WorldMonitor & Full-Stack Platform Engineering</h3>
               <p>Created real-time global intelligence situational awareness dashboards, corporate subsidiary data mining engines, and interactive developer toolchains.</p>
@@ -477,7 +491,7 @@
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
-            <div class="timeline-content glass-panel">
+            <div class="timeline-content glass-panel tilt-card-3d">
               <span class="timeline-date">2023 - Present</span>
               <h3>Algorithmic Mastery & 14 Open Source Projects</h3>
               <p>Built LeetCode analytics trackers, custom machine learning models, and developed an open-source engineering portfolio of 16 GitHub repositories.</p>
@@ -498,7 +512,7 @@
         </div>
 
         <div class="contact-grid">
-          <div class="contact-info-card glass-panel">
+          <div class="contact-info-card glass-panel tilt-card-3d">
             <h3>Contact Information</h3>
             <p>Feel free to reach out directly through any of these communication channels:</p>
 
@@ -541,7 +555,7 @@
             </div>
           </div>
 
-          <form id="contact-form" class="contact-form-card glass-panel">
+          <form id="contact-form" class="contact-form-card glass-panel tilt-card-3d">
             <h3>Send Me A Message</h3>
             
             <div class="form-group">
@@ -580,7 +594,7 @@
         <a href="#hero" class="brand-logo">
           <span class="logo-accent">&lt;</span>Tarun<span class="logo-highlight">Jampani</span><span class="logo-accent">/&gt;</span>
         </a>
-        <p>Full-Stack Engineer & AI Developer | Building Next-Gen AI Apps & Systems</p>
+        <p>Full-Stack Engineer & AI Developer | Building Next-Gen 3D Web & AI Systems</p>
       </div>
 
       <div class="footer-links">
@@ -624,7 +638,7 @@
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div id="toast-container" class="toast-container"></div>
 
-  <!-- JavaScript with Cache Buster v8.0 -->
-  <script src="script.js?v=8.0"></script>
+  <!-- JavaScript with Cache Buster v9.0 -->
+  <script src="script.js?v=9.0"></script>
 </body>
 </html>
