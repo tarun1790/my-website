@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. THREE.JS 3D WEBGL INTERACTIVE SCENE (PROMINENT & CLEAN)
+   1. THREE.JS 3D WEBGL INTERACTIVE SCENE
    ========================================================================== */
 function initThreeJS() {
   const canvas = document.getElementById('three-canvas');
@@ -253,7 +253,7 @@ function initTerminal() {
 
   const welcomeBanner = `
 <span class="t-cyan">===============================================================</span>
-<span class="t-cyan">           TARUN JAMPANI DEVELOPER TERMINAL v12.0              </span>
+<span class="t-cyan">           TARUN JAMPANI DEVELOPER TERMINAL v13.0              </span>
 <span class="t-cyan">===============================================================</span>
 Type <span class="t-green">'help'</span> to view available commands or click quick action pills below.
 `;
@@ -448,7 +448,7 @@ function initSkills() {
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=12.0');
+    const certsResp = await fetch('data/certifications.json?v=13.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
@@ -543,6 +543,28 @@ function renderProjects(filter = 'all', query = '') {
   });
 }
 
+// HELPER FUNCTION: Get official brand badge icon for certifications (NO user photo)
+function getCertBadgeIconHtml(c) {
+  const issuer = (c.issuer || '').toLowerCase();
+  const title = (c.title || '').toLowerCase();
+
+  if (issuer.includes('oracle')) {
+    return `<div class="cert-icon-badge oracle-badge" title="Oracle Certified"><i class="fa-solid fa-award"></i></div>`;
+  } else if (issuer.includes('google') || title.includes('google')) {
+    return `<div class="cert-icon-badge google-badge" title="Google Cloud Certified"><i class="fa-brands fa-google"></i></div>`;
+  } else if (issuer.includes('nptel') || issuer.includes('iit')) {
+    return `<div class="cert-icon-badge iit-badge" title="NPTEL / IIT Elite"><i class="fa-solid fa-graduation-cap"></i></div>`;
+  } else if (issuer.includes('infosys')) {
+    return `<div class="cert-icon-badge infosys-badge" title="Infosys Springboard"><i class="fa-solid fa-code"></i></div>`;
+  } else if (issuer.includes('hp')) {
+    return `<div class="cert-icon-badge hp-badge" title="HP LIFE Certified"><i class="fa-solid fa-chart-line"></i></div>`;
+  } else if (issuer.includes('ibmi') || issuer.includes('berlin')) {
+    return `<div class="cert-icon-badge ibmi-badge" title="IBMI Berlin Certificate"><i class="fa-solid fa-certificate"></i></div>`;
+  } else {
+    return `<div class="cert-icon-badge google-badge" title="Verified Certification"><i class="fa-solid fa-award"></i></div>`;
+  }
+}
+
 function renderCertifications() {
   const grid = document.getElementById('certs-grid');
   if (!grid) return;
@@ -554,7 +576,7 @@ function renderCertifications() {
     card.className = 'cert-card glass-panel';
     card.innerHTML = `
       <div class="cert-badge-header">
-        <img src="${c.badge || 'assets/tarun_profile.jpg'}" alt="${escapeHtml(c.title)}" class="cert-img-thumb">
+        ${getCertBadgeIconHtml(c)}
         <div>
           <div class="cert-title">${escapeHtml(c.title)}</div>
           <div class="cert-issuer">${escapeHtml(c.issuer)}</div>
@@ -569,7 +591,7 @@ function renderCertifications() {
 
       <div class="cert-meta-row">
         <span>Issued: <strong>${escapeHtml(c.date)}</strong></span>
-        ${c.verifyUrl ? `<a href="${c.verifyUrl}" target="_blank" rel="noopener" class="btn-gh" style="padding:4px 10px; font-size:0.78rem;" onclick="event.stopPropagation();">Verify Credential</a>` : ''}
+        ${(c.verificationUrl || c.verifyUrl) ? `<a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-gh" style="padding:4px 10px; font-size:0.78rem;" onclick="event.stopPropagation();">Verify Credential</a>` : ''}
       </div>
     `;
 
@@ -614,7 +636,7 @@ function openCertModal(c) {
 
   content.innerHTML = `
     <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
-      <img src="${c.badge || 'assets/tarun_profile.jpg'}" style="width:64px; height:64px; border-radius:14px; object-fit:cover; border:2px solid #38bdf8;">
+      ${getCertBadgeIconHtml(c)}
       <div>
         <h2 style="font-family:var(--font-title); font-size:1.6rem; color:#ffffff;">${escapeHtml(c.title)}</h2>
         <span style="color:#38bdf8; font-weight:700;">${escapeHtml(c.issuer)}</span>
@@ -631,7 +653,7 @@ function openCertModal(c) {
     </div>
 
     <div style="display:flex; gap:16px;">
-      ${c.verifyUrl ? `<a href="${c.verifyUrl}" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-award"></i> Verify Official Credential</a>` : ''}
+      ${(c.verificationUrl || c.verifyUrl) ? `<a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-award"></i> Verify Official Credential</a>` : ''}
     </div>
   `;
 
@@ -783,7 +805,6 @@ const fallbackCerts = [
     title: "Oracle Cloud Infrastructure 2024 Generative AI Certified Professional",
     issuer: "Oracle",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Verified expertise in Large Language Model (LLM) fine-tuning, OCI Generative AI service deployment, RAG vector pipelines, and prompt engineering.",
     skills: ["OCI GenAI", "LLM Fine-Tuning", "Vector Search", "RAG Systems"],
     verifyUrl: "https://education.oracle.com"
@@ -792,7 +813,6 @@ const fallbackCerts = [
     title: "Oracle Autonomous Database Cloud 2024 Certified Specialist",
     issuer: "Oracle",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Specialist certification for provisioning, managing, and tuning high-concurrency Oracle Autonomous Data Warehouses and Transaction Processing instances.",
     skills: ["Autonomous DB", "Oracle SQL", "High Availability", "Performance Tuning"],
     verifyUrl: "https://education.oracle.com"
@@ -801,7 +821,6 @@ const fallbackCerts = [
     title: "NPTEL Elite Certificate - Data Science for Engineers",
     issuer: "NPTEL / IIT Madras",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Scored 81% (Elite Status) in rigorous national engineering exam covering linear algebra, R programming, data wrangling, and predictive modeling.",
     skills: ["Linear Algebra", "Data Wrangling", "R", "Predictive Modeling"],
     verifyUrl: "https://nptel.ac.in"
@@ -810,7 +829,6 @@ const fallbackCerts = [
     title: "Google Cloud Generative AI Fundamentals",
     issuer: "Google Cloud",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Foundational credential covering Google Cloud Vertex AI, Transformer architecture principles, and responsible AI deployment.",
     skills: ["Vertex AI", "Transformers", "Responsible AI"],
     verifyUrl: "https://cloud.google.com"
@@ -819,7 +837,6 @@ const fallbackCerts = [
     title: "DeepTech DSA Certification",
     issuer: "IIT Bombay Techfest",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Advanced Data Structures & Algorithms qualification testing asymptotic analysis, graph algorithms, and dynamic programming.",
     skills: ["Graph Theory", "Dynamic Programming", "Asymptotic Analysis"],
     verifyUrl: "https://techfest.org"
@@ -828,7 +845,6 @@ const fallbackCerts = [
     title: "HP LIFE Data Science & Analytics",
     issuer: "HP LIFE",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Data analytics certification demonstrating business intelligence reporting, data visualization, and statistical modeling.",
     skills: ["Data Analytics", "Business Intelligence", "Visualization"],
     verifyUrl: "https://www.life-global.org"
@@ -837,7 +853,6 @@ const fallbackCerts = [
     title: "Infosys Python Programmer 1 & 2",
     issuer: "Infosys Springboard",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Comprehensive dual python credential covering object-oriented programming, file I/O, data structures, and exception handling.",
     skills: ["Python OOP", "Data Structures", "Modules"],
     verifyUrl: "https://infyspringboard.onwingspan.com"
@@ -846,7 +861,6 @@ const fallbackCerts = [
     title: "Infosys Agile Software Development",
     issuer: "Infosys Springboard",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "Scrum methodology certification covering sprint planning, continuous integration, user story estimation, and TDD.",
     skills: ["Scrum", "Sprint Planning", "TDD", "CI/CD"],
     verifyUrl: "https://infyspringboard.onwingspan.com"
@@ -855,7 +869,6 @@ const fallbackCerts = [
     title: "IBMI Berlin Data Science Certification",
     issuer: "IBMI Berlin",
     date: "2024",
-    badge: "cert_badge_1785689247252.jpg",
     description: "European institute certification in statistical machine learning, data mining, and feature engineering techniques.",
     skills: ["Machine Learning", "Data Mining", "Statistics"],
     verifyUrl: "https://ibmi.de"
