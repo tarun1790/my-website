@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. THREE.JS 3D WEBGL INTERACTIVE SCENE (Clean, Zero Glow)
+   1. THREE.JS 3D WEBGL INTERACTIVE SCENE (PROMINENT & CLEAN)
    ========================================================================== */
 function initThreeJS() {
   const canvas = document.getElementById('three-canvas');
@@ -29,38 +29,38 @@ function initThreeJS() {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 30;
+  camera.position.z = 28;
 
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // 1. 3D Cyber Wireframe Sphere
-  const sphereGeo = new THREE.IcosahedronGeometry(14, 2);
+  // 1. Prominent 3D Geodesic Cyber Wireframe Sphere
+  const sphereGeo = new THREE.IcosahedronGeometry(18, 2);
   const sphereMat = new THREE.MeshBasicMaterial({
     color: 0x38bdf8,
     wireframe: true,
     transparent: true,
-    opacity: 0.18
+    opacity: 0.35
   });
   const cyberSphere = new THREE.Mesh(sphereGeo, sphereMat);
-  cyberSphere.position.set(0, 0, -10);
+  cyberSphere.position.set(0, 0, -5);
   scene.add(cyberSphere);
 
-  // 2. Inner Geodesic Core
-  const innerGeo = new THREE.IcosahedronGeometry(8, 1);
-  const innerMat = new THREE.MeshBasicMaterial({
+  // 2. Inner 3D Rotating Cyber TorusKnot
+  const torusGeo = new THREE.TorusKnotGeometry(9, 2.5, 100, 16);
+  const torusMat = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     wireframe: true,
     transparent: true,
-    opacity: 0.1
+    opacity: 0.25
   });
-  const innerSphere = new THREE.Mesh(innerGeo, innerMat);
-  innerSphere.position.set(0, 0, -10);
-  scene.add(innerSphere);
+  const torusKnot = new THREE.Mesh(torusGeo, torusMat);
+  torusKnot.position.set(0, 0, -5);
+  scene.add(torusKnot);
 
-  // 3. Floating 3D Star Particle Field (1200 Particles)
-  const particlesCount = 1200;
+  // 3. Floating 3D Star Constellation Field (2000 Particles)
+  const particlesCount = 2000;
   const positions = new Float32Array(particlesCount * 3);
   const colors = new Float32Array(particlesCount * 3);
 
@@ -72,9 +72,9 @@ function initThreeJS() {
   ];
 
   for (let i = 0; i < particlesCount * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 120;
-    positions[i + 1] = (Math.random() - 0.5) * 120;
-    positions[i + 2] = (Math.random() - 0.5) * 120;
+    positions[i] = (Math.random() - 0.5) * 140;
+    positions[i + 1] = (Math.random() - 0.5) * 140;
+    positions[i + 2] = (Math.random() - 0.5) * 140;
 
     const chosenColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
     colors[i] = chosenColor.r;
@@ -87,17 +87,17 @@ function initThreeJS() {
   particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   const particlesMat = new THREE.PointsMaterial({
-    size: 0.65,
+    size: 0.8,
     vertexColors: true,
     transparent: true,
-    opacity: 0.75
+    opacity: 0.85
   });
 
   const particleSystem = new THREE.Points(particlesGeo, particlesMat);
   scene.add(particleSystem);
 
   // Ambient Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
   scene.add(ambientLight);
 
   // Smooth Mouse Parallax Tracking
@@ -107,8 +107,8 @@ function initThreeJS() {
   let targetY = 0;
 
   window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
-    mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.0012;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.0012;
   });
 
   window.addEventListener('resize', () => {
@@ -123,17 +123,17 @@ function initThreeJS() {
     targetX += (mouseX - targetX) * 0.05;
     targetY += (mouseY - targetY) * 0.05;
 
-    cyberSphere.rotation.x += 0.0025;
-    cyberSphere.rotation.y += 0.004;
+    cyberSphere.rotation.x += 0.003;
+    cyberSphere.rotation.y += 0.005;
 
-    innerSphere.rotation.x -= 0.003;
-    innerSphere.rotation.y -= 0.005;
+    torusKnot.rotation.x -= 0.004;
+    torusKnot.rotation.y -= 0.006;
 
-    particleSystem.rotation.y += 0.0008;
-    particleSystem.rotation.x += 0.0004;
+    particleSystem.rotation.y += 0.001;
+    particleSystem.rotation.x += 0.0005;
 
-    scene.rotation.y = targetX * 1.2;
-    scene.rotation.x = -targetY * 1.2;
+    scene.rotation.y = targetX * 1.5;
+    scene.rotation.x = -targetY * 1.5;
 
     renderer.render(scene, camera);
   }
