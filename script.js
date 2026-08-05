@@ -1,16 +1,15 @@
 /* ==========================================================================
-   TARUN JAMPANI 3D INTERACTIVE PORTFOLIO ENGINE (script.js)
-   WebGL 3D Scene (Three.js) + Interactive 3D Card Tilt + Authentic Brand Icons
+   TARUN JAMPANI PORTFOLIO INTERACTIVE LOGIC (script.js)
+   Aesthetic: Genuine, Executive Classic Portfolio
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Global Datasets
+  // Global State Datasets
   let projectsData = [];
   let certsData = [];
 
   // Initialize Systems
-  initThreeJS();
-  init3DTilt();
+  initCanvasBackground();
   initTypingEffect();
   initNavigation();
   initTerminal();
@@ -22,170 +21,79 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. THREE.JS 3D WEBGL INTERACTIVE SCENE
+   1. AMBIENT CANVAS BACKGROUND (Subtle Constellation Dust)
    ========================================================================== */
-function initThreeJS() {
-  const canvas = document.getElementById('three-canvas');
-  if (!canvas || typeof THREE === 'undefined') return;
+function initCanvasBackground() {
+  const canvas = document.getElementById('bg-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
 
-  // Scene, Camera, Renderer
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 30;
-
-  const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-  // 1. 3D Cyber Wireframe Sphere
-  const sphereGeo = new THREE.IcosahedronGeometry(14, 2);
-  const sphereMat = new THREE.MeshBasicMaterial({
-    color: 0x00f2fe,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.25
-  });
-  const cyberSphere = new THREE.Mesh(sphereGeo, sphereMat);
-  cyberSphere.position.set(0, 0, -10);
-  scene.add(cyberSphere);
-
-  // 2. Inner Glowing 3D Node Core
-  const innerGeo = new THREE.IcosahedronGeometry(8, 1);
-  const innerMat = new THREE.MeshBasicMaterial({
-    color: 0x38bdf8,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.15
-  });
-  const innerSphere = new THREE.Mesh(innerGeo, innerMat);
-  innerSphere.position.set(0, 0, -10);
-  scene.add(innerSphere);
-
-  // 3. Floating 3D Star Particle Field (1200 Particles)
-  const particlesCount = 1200;
-  const positions = new Float32Array(particlesCount * 3);
-  const colors = new Float32Array(particlesCount * 3);
-
-  const colorOptions = [
-    new THREE.Color(0x00f2fe),
-    new THREE.Color(0x38bdf8),
-    new THREE.Color(0x0284c7),
-    new THREE.Color(0xffffff)
-  ];
-
-  for (let i = 0; i < particlesCount * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 120;
-    positions[i + 1] = (Math.random() - 0.5) * 120;
-    positions[i + 2] = (Math.random() - 0.5) * 120;
-
-    const chosenColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
-    colors[i] = chosenColor.r;
-    colors[i + 1] = chosenColor.g;
-    colors[i + 2] = chosenColor.b;
-  }
-
-  const particlesGeo = new THREE.BufferGeometry();
-  particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-  const particlesMat = new THREE.PointsMaterial({
-    size: 0.6,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.85
-  });
-
-  const particleSystem = new THREE.Points(particlesGeo, particlesMat);
-  scene.add(particleSystem);
-
-  // Ambient Light
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-  scene.add(ambientLight);
-
-  // Mouse Parallax Effect
-  let mouseX = 0;
-  let mouseY = 0;
-  let targetX = 0;
-  let targetY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
-    mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
-  });
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
 
   window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
   });
 
-  // Animation Loop
-  function animate3D() {
-    requestAnimationFrame(animate3D);
+  const particles = [];
+  const particleCount = Math.min(Math.floor(width / 22), 65);
 
-    // Smooth camera damping
-    targetX += (mouseX - targetX) * 0.05;
-    targetY += (mouseY - targetY) * 0.05;
-
-    cyberSphere.rotation.x += 0.003;
-    cyberSphere.rotation.y += 0.005;
-
-    innerSphere.rotation.x -= 0.004;
-    innerSphere.rotation.y -= 0.006;
-
-    particleSystem.rotation.y += 0.001;
-    particleSystem.rotation.x += 0.0005;
-
-    scene.rotation.y = targetX * 1.5;
-    scene.rotation.x = -targetY * 1.5;
-
-    renderer.render(scene, camera);
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      radius: Math.random() * 1.6 + 0.8,
+      alpha: Math.random() * 0.5 + 0.2
+    });
   }
 
-  animate3D();
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < particles.length; i++) {
+      let p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+      ctx.fill();
+
+      // Connect close particles
+      for (let j = i + 1; j < particles.length; j++) {
+        let p2 = particles[j];
+        let dx = p.x - p2.x;
+        let dy = p.y - p2.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 110) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - dist / 110)})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
 
 /* ==========================================================================
-   2. INTERACTIVE 3D CARD TILT ENGINE
-   ========================================================================== */
-function init3DTilt() {
-  const attachTiltToCards = () => {
-    const cards = document.querySelectorAll('.tilt-card-3d, .glass-panel, .project-card, .cert-card, .skill-card');
-
-    cards.forEach(card => {
-      if (card.dataset.tiltApplied) return;
-      card.dataset.tiltApplied = "true";
-
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -12; // Rotate up/down max 12 deg
-        const rotateY = ((x - centerX) / centerX) * 12;  // Rotate left/right max 12 deg
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(15px) scale3d(1.02, 1.02, 1.02)`;
-        card.style.borderColor = '#00f2fe';
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale3d(1, 1, 1)`;
-      });
-    });
-  };
-
-  attachTiltToCards();
-
-  // Re-attach tilt when new dynamic cards are rendered
-  const observer = new MutationObserver(attachTiltToCards);
-  observer.observe(document.body, { childList: true, subtree: true });
-}
-
-/* ==========================================================================
-   3. TYPING EFFECT
+   2. TYPING EFFECT
    ========================================================================== */
 function initTypingEffect() {
   const typingText = document.getElementById('typing-text');
@@ -231,7 +139,7 @@ function initTypingEffect() {
 }
 
 /* ==========================================================================
-   4. NAVIGATION & SCROLL TRACKER
+   3. NAVIGATION & SCROLLSPY
    ========================================================================== */
 function initNavigation() {
   const header = document.getElementById('main-header');
@@ -246,7 +154,6 @@ function initNavigation() {
       header.classList.remove('scrolled');
     }
 
-    // ScrollSpy active link detection
     let currentSection = '';
     const sections = document.querySelectorAll('section');
     
@@ -282,7 +189,7 @@ function initNavigation() {
 }
 
 /* ==========================================================================
-   5. INTERACTIVE TERMINAL SYSTEM
+   4. INTERACTIVE TERMINAL SYSTEM
    ========================================================================== */
 function initTerminal() {
   const output = document.getElementById('terminal-output');
@@ -297,7 +204,7 @@ function initTerminal() {
 
   const welcomeBanner = `
 <span class="t-cyan">===============================================================</span>
-<span class="t-cyan">          TARUN JAMPANI INTERACTIVE 3D CLI v9.0               </span>
+<span class="t-cyan">           TARUN JAMPANI DEVELOPER TERMINAL v10.0              </span>
 <span class="t-cyan">===============================================================</span>
 Type <span class="t-green">'help'</span> to view available commands or click quick action pills below.
 `;
@@ -431,7 +338,7 @@ Available Commands:
 }
 
 /* ==========================================================================
-   6. SKILLS MATRIX RENDERER
+   5. SKILLS MATRIX RENDERER
    ========================================================================== */
 function initSkills() {
   const container = document.getElementById('skills-container');
@@ -445,7 +352,7 @@ function initSkills() {
     { name: "HTML5 & CSS3", cat: "languages", icon: "fa-brands fa-html5", level: 95 },
     { name: "React", cat: "frameworks", icon: "fa-brands fa-react", level: 90 },
     { name: "Node.js & Express", cat: "frameworks", icon: "fa-brands fa-node-js", level: 88 },
-    { name: "REST APIs & Web System", cat: "frameworks", icon: "fa-solid fa-layer-group", level: 92 },
+    { name: "REST APIs & Web Systems", cat: "frameworks", icon: "fa-solid fa-layer-group", level: 92 },
     { name: "GraphRAG & Agent Memory", cat: "ai", icon: "fa-solid fa-brain", level: 92 },
     { name: "PyTorch & TensorFlow", cat: "ai", icon: "fa-solid fa-robot", level: 88 },
     { name: "Scikit-Learn & XGBoost", cat: "ai", icon: "fa-solid fa-chart-line", level: 90 },
@@ -461,7 +368,7 @@ function initSkills() {
 
     filtered.forEach(s => {
       const card = document.createElement('div');
-      card.className = 'skill-card glass-panel tilt-card-3d';
+      card.className = 'skill-card glass-panel';
       card.innerHTML = `
         <div class="skill-card-icon"><i class="${s.icon}"></i></div>
         <div class="skill-card-info">
@@ -488,11 +395,11 @@ function initSkills() {
 }
 
 /* ==========================================================================
-   7. LOAD DATA & RENDER PROJECTS & CERTIFICATIONS
+   6. LOAD DATA & RENDER PROJECTS & CERTIFICATIONS
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=9.0');
+    const certsResp = await fetch('data/certifications.json?v=10.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
@@ -504,13 +411,11 @@ async function loadDataAndRender() {
     certsData = fallbackCerts;
   }
 
-  // Load projects fallback
   projectsData = fallbackProjects;
 
   renderProjects('all', '');
   renderCertifications();
 
-  // Search & Filter Listeners
   const searchInput = document.getElementById('project-search-input');
   const filterBtns = document.querySelectorAll('.filter-btn');
 
@@ -559,7 +464,7 @@ function renderProjects(filter = 'all', query = '') {
 
   filtered.forEach(p => {
     const card = document.createElement('div');
-    card.className = 'project-card glass-panel tilt-card-3d';
+    card.className = 'project-card glass-panel';
     card.innerHTML = `
       <div class="project-top-row">
         <div class="project-icon-box"><i class="${p.icon || 'fa-solid fa-code'}"></i></div>
@@ -597,7 +502,7 @@ function renderCertifications() {
 
   certsData.forEach(c => {
     const card = document.createElement('div');
-    card.className = 'cert-card glass-panel tilt-card-3d';
+    card.className = 'cert-card glass-panel';
     card.innerHTML = `
       <div class="cert-badge-header">
         <img src="${c.badge || 'assets/tarun_profile.jpg'}" alt="${escapeHtml(c.title)}" class="cert-img-thumb">
@@ -625,7 +530,7 @@ function renderCertifications() {
 }
 
 /* ==========================================================================
-   8. MODALS & FORMS
+   7. MODALS & FORMS
    ========================================================================== */
 function openProjectModal(p) {
   const modal = document.getElementById('project-modal');
@@ -637,7 +542,7 @@ function openProjectModal(p) {
     <p style="color:var(--text-secondary); margin-bottom:20px; line-height:1.7;">${escapeHtml(p.description)}</p>
     
     <div style="margin-bottom:20px;">
-      <h4 style="color:#00f2fe; margin-bottom:8px;">Technologies & Tools</h4>
+      <h4 style="color:#38bdf8; margin-bottom:8px;">Technologies & Tools</h4>
       <div class="project-tags">
         ${p.tags.map(t => `<span class="p-tag">${escapeHtml(t)}</span>`).join('')}
       </div>
@@ -660,17 +565,17 @@ function openCertModal(c) {
 
   content.innerHTML = `
     <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
-      <img src="${c.badge || 'assets/tarun_profile.jpg'}" style="width:64px; height:64px; border-radius:14px; object-fit:cover; border:2px solid #00f2fe;">
+      <img src="${c.badge || 'assets/tarun_profile.jpg'}" style="width:64px; height:64px; border-radius:14px; object-fit:cover; border:2px solid #38bdf8;">
       <div>
         <h2 style="font-family:var(--font-title); font-size:1.6rem; color:#ffffff;">${escapeHtml(c.title)}</h2>
-        <span style="color:#00f2fe; font-weight:700;">${escapeHtml(c.issuer)}</span>
+        <span style="color:#38bdf8; font-weight:700;">${escapeHtml(c.issuer)}</span>
       </div>
     </div>
 
     <p style="color:var(--text-secondary); margin-bottom:20px; line-height:1.7;">${escapeHtml(c.description)}</p>
 
     <div style="margin-bottom:24px;">
-      <h4 style="color:#00f2fe; margin-bottom:8px;">Verified Skills & Competencies</h4>
+      <h4 style="color:#38bdf8; margin-bottom:8px;">Verified Skills & Competencies</h4>
       <div class="cert-skills-wrap">
         ${(c.skills || []).map(s => `<span class="c-skill-tag">${escapeHtml(s)}</span>`).join('')}
       </div>
@@ -741,7 +646,7 @@ function showToast(msg) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#00f2fe;"></i> <span>${escapeHtml(msg)}</span>`;
+  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#38bdf8;"></i> <span>${escapeHtml(msg)}</span>`;
 
   container.appendChild(toast);
 
@@ -759,7 +664,7 @@ function escapeHtml(str) {
 }
 
 /* ==========================================================================
-   FALLBACK DATASETS
+   FALLBACK DATASETS (10 Real Certifications & Top Repositories)
    ========================================================================== */
 const fallbackProjects = [
   {
