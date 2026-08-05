@@ -1,6 +1,6 @@
 /* ==========================================================================
-   TARUN JAMPANI PORTFOLIO INTERACTIVE LOGIC (script.js)
-   Aesthetic: Genuine, Executive Classic Portfolio
+   TARUN JAMPANI 3D PORTFOLIO ENGINE (script.js)
+   WebGL 3D Scene (Three.js) + Classic Dark Theme + Authentic Icons
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let certsData = [];
 
   // Initialize Systems
-  initCanvasBackground();
+  initThreeJS();
   initTypingEffect();
   initNavigation();
   initTerminal();
@@ -21,75 +21,124 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. AMBIENT CANVAS BACKGROUND (Subtle Constellation Dust)
+   1. THREE.JS 3D WEBGL INTERACTIVE SCENE (Clean, Zero Glow)
    ========================================================================== */
-function initCanvasBackground() {
-  const canvas = document.getElementById('bg-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+function initThreeJS() {
+  const canvas = document.getElementById('three-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
 
-  let width = (canvas.width = window.innerWidth);
-  let height = (canvas.height = window.innerHeight);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 30;
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // 1. 3D Cyber Wireframe Sphere
+  const sphereGeo = new THREE.IcosahedronGeometry(14, 2);
+  const sphereMat = new THREE.MeshBasicMaterial({
+    color: 0x38bdf8,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.18
+  });
+  const cyberSphere = new THREE.Mesh(sphereGeo, sphereMat);
+  cyberSphere.position.set(0, 0, -10);
+  scene.add(cyberSphere);
+
+  // 2. Inner Geodesic Core
+  const innerGeo = new THREE.IcosahedronGeometry(8, 1);
+  const innerMat = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.1
+  });
+  const innerSphere = new THREE.Mesh(innerGeo, innerMat);
+  innerSphere.position.set(0, 0, -10);
+  scene.add(innerSphere);
+
+  // 3. Floating 3D Star Particle Field (1200 Particles)
+  const particlesCount = 1200;
+  const positions = new Float32Array(particlesCount * 3);
+  const colors = new Float32Array(particlesCount * 3);
+
+  const colorOptions = [
+    new THREE.Color(0x38bdf8),
+    new THREE.Color(0x0284c7),
+    new THREE.Color(0x7dd3fc),
+    new THREE.Color(0xffffff)
+  ];
+
+  for (let i = 0; i < particlesCount * 3; i += 3) {
+    positions[i] = (Math.random() - 0.5) * 120;
+    positions[i + 1] = (Math.random() - 0.5) * 120;
+    positions[i + 2] = (Math.random() - 0.5) * 120;
+
+    const chosenColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+    colors[i] = chosenColor.r;
+    colors[i + 1] = chosenColor.g;
+    colors[i + 2] = chosenColor.b;
+  }
+
+  const particlesGeo = new THREE.BufferGeometry();
+  particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  const particlesMat = new THREE.PointsMaterial({
+    size: 0.65,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.75
   });
 
-  const particles = [];
-  const particleCount = Math.min(Math.floor(width / 22), 65);
+  const particleSystem = new THREE.Points(particlesGeo, particlesMat);
+  scene.add(particleSystem);
 
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      radius: Math.random() * 1.6 + 0.8,
-      alpha: Math.random() * 0.5 + 0.2
-    });
+  // Ambient Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+
+  // Smooth Mouse Parallax Tracking
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
+  });
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  function animate3D() {
+    requestAnimationFrame(animate3D);
+
+    targetX += (mouseX - targetX) * 0.05;
+    targetY += (mouseY - targetY) * 0.05;
+
+    cyberSphere.rotation.x += 0.0025;
+    cyberSphere.rotation.y += 0.004;
+
+    innerSphere.rotation.x -= 0.003;
+    innerSphere.rotation.y -= 0.005;
+
+    particleSystem.rotation.y += 0.0008;
+    particleSystem.rotation.x += 0.0004;
+
+    scene.rotation.y = targetX * 1.2;
+    scene.rotation.x = -targetY * 1.2;
+
+    renderer.render(scene, camera);
   }
 
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < particles.length; i++) {
-      let p = particles[i];
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0) p.x = width;
-      if (p.x > width) p.x = 0;
-      if (p.y < 0) p.y = height;
-      if (p.y > height) p.y = 0;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-      ctx.fill();
-
-      // Connect close particles
-      for (let j = i + 1; j < particles.length; j++) {
-        let p2 = particles[j];
-        let dx = p.x - p2.x;
-        let dy = p.y - p2.y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 110) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - dist / 110)})`;
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
+  animate3D();
 }
 
 /* ==========================================================================
@@ -204,7 +253,7 @@ function initTerminal() {
 
   const welcomeBanner = `
 <span class="t-cyan">===============================================================</span>
-<span class="t-cyan">           TARUN JAMPANI DEVELOPER TERMINAL v10.0              </span>
+<span class="t-cyan">           TARUN JAMPANI DEVELOPER TERMINAL v12.0              </span>
 <span class="t-cyan">===============================================================</span>
 Type <span class="t-green">'help'</span> to view available commands or click quick action pills below.
 `;
@@ -399,7 +448,7 @@ function initSkills() {
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=10.0');
+    const certsResp = await fetch('data/certifications.json?v=12.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
@@ -664,7 +713,7 @@ function escapeHtml(str) {
 }
 
 /* ==========================================================================
-   FALLBACK DATASETS (10 Real Certifications & Top Repositories)
+   FALLBACK DATASETS
    ========================================================================== */
 const fallbackProjects = [
   {
