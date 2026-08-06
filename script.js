@@ -437,7 +437,7 @@ function initSkills() {
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=19.0');
+    const certsResp = await fetch('data/certifications.json?v=2026.10.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
