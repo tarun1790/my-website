@@ -41,19 +41,19 @@ function initThreeJS() {
     color: 0xc6362e,
     wireframe: true,
     transparent: true,
-    opacity: 0.2
+    opacity: 0.35
   });
   const cyberSphere = new THREE.Mesh(sphereGeo, sphereMat);
   cyberSphere.position.set(0, 0, -5);
   scene.add(cyberSphere);
 
-  // 2. Inner Rotating Slate TorusKnot
+  // 2. Inner Rotating Blue TorusKnot
   const torusGeo = new THREE.TorusKnotGeometry(9, 2.5, 100, 16);
   const torusMat = new THREE.MeshBasicMaterial({
-    color: 0x242833,
+    color: 0x38bdf8,
     wireframe: true,
     transparent: true,
-    opacity: 0.15
+    opacity: 0.25
   });
   const torusKnot = new THREE.Mesh(torusGeo, torusMat);
   torusKnot.position.set(0, 0, -5);
@@ -66,9 +66,9 @@ function initThreeJS() {
 
   const colorOptions = [
     new THREE.Color(0xc6362e),
-    new THREE.Color(0x242833),
+    new THREE.Color(0x38bdf8),
     new THREE.Color(0xd4af37),
-    new THREE.Color(0x333333)
+    new THREE.Color(0xffffff)
   ];
 
   for (let i = 0; i < particlesCount * 3; i += 3) {
@@ -437,7 +437,7 @@ function initSkills() {
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=17.0');
+    const certsResp = await fetch('data/certifications.json?v=18.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
