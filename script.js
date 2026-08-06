@@ -1,6 +1,6 @@
 /* ==========================================================================
-   TARUN JAMPANI 3D PORTFOLIO ENGINE (script.js)
-   WebGL 3D Scene (Three.js) + Classic Dark Theme + Authentic Icons
+   TARUN JAMPANI PORTFOLIO LOGIC (script.js)
+   Soshoku Luxury Editorial Theme & WebGL 3D Scene
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. THREE.JS 3D WEBGL INTERACTIVE SCENE
+   1. THREE.JS 3D WEBGL INTERACTIVE SCENE (SOSHOKU PALETTE)
    ========================================================================== */
 function initThreeJS() {
   const canvas = document.getElementById('three-canvas');
@@ -35,40 +35,40 @@ function initThreeJS() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // 1. Prominent 3D Geodesic Cyber Wireframe Sphere
+  // 1. Terracotta Wireframe Cyber Sphere
   const sphereGeo = new THREE.IcosahedronGeometry(18, 2);
   const sphereMat = new THREE.MeshBasicMaterial({
-    color: 0x38bdf8,
+    color: 0xc6362e,
     wireframe: true,
     transparent: true,
-    opacity: 0.35
+    opacity: 0.2
   });
   const cyberSphere = new THREE.Mesh(sphereGeo, sphereMat);
   cyberSphere.position.set(0, 0, -5);
   scene.add(cyberSphere);
 
-  // 2. Inner 3D Rotating Cyber TorusKnot
+  // 2. Inner Rotating Slate TorusKnot
   const torusGeo = new THREE.TorusKnotGeometry(9, 2.5, 100, 16);
   const torusMat = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
+    color: 0x242833,
     wireframe: true,
     transparent: true,
-    opacity: 0.25
+    opacity: 0.15
   });
   const torusKnot = new THREE.Mesh(torusGeo, torusMat);
   torusKnot.position.set(0, 0, -5);
   scene.add(torusKnot);
 
-  // 3. Floating 3D Star Constellation Field (2000 Particles)
-  const particlesCount = 2000;
+  // 3. Floating 3D Star Constellation Field (1500 Particles)
+  const particlesCount = 1500;
   const positions = new Float32Array(particlesCount * 3);
   const colors = new Float32Array(particlesCount * 3);
 
   const colorOptions = [
-    new THREE.Color(0x38bdf8),
-    new THREE.Color(0x0284c7),
-    new THREE.Color(0x7dd3fc),
-    new THREE.Color(0xffffff)
+    new THREE.Color(0xc6362e),
+    new THREE.Color(0x242833),
+    new THREE.Color(0xd4af37),
+    new THREE.Color(0x333333)
   ];
 
   for (let i = 0; i < particlesCount * 3; i += 3) {
@@ -87,18 +87,14 @@ function initThreeJS() {
   particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   const particlesMat = new THREE.PointsMaterial({
-    size: 0.8,
+    size: 0.75,
     vertexColors: true,
     transparent: true,
-    opacity: 0.85
+    opacity: 0.7
   });
 
   const particleSystem = new THREE.Points(particlesGeo, particlesMat);
   scene.add(particleSystem);
-
-  // Ambient Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
-  scene.add(ambientLight);
 
   // Smooth Mouse Parallax Tracking
   let mouseX = 0;
@@ -107,8 +103,8 @@ function initThreeJS() {
   let targetY = 0;
 
   window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - window.innerWidth / 2) * 0.0012;
-    mouseY = (e.clientY - window.innerHeight / 2) * 0.0012;
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.001;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.001;
   });
 
   window.addEventListener('resize', () => {
@@ -123,17 +119,16 @@ function initThreeJS() {
     targetX += (mouseX - targetX) * 0.05;
     targetY += (mouseY - targetY) * 0.05;
 
-    cyberSphere.rotation.x += 0.003;
-    cyberSphere.rotation.y += 0.005;
+    cyberSphere.rotation.x += 0.002;
+    cyberSphere.rotation.y += 0.003;
 
-    torusKnot.rotation.x -= 0.004;
-    torusKnot.rotation.y -= 0.006;
+    torusKnot.rotation.x -= 0.003;
+    torusKnot.rotation.y -= 0.004;
 
-    particleSystem.rotation.y += 0.001;
-    particleSystem.rotation.x += 0.0005;
+    particleSystem.rotation.y += 0.0008;
 
-    scene.rotation.y = targetX * 1.5;
-    scene.rotation.x = -targetY * 1.5;
+    scene.rotation.y = targetX * 1.2;
+    scene.rotation.x = -targetY * 1.2;
 
     renderer.render(scene, camera);
   }
@@ -197,12 +192,6 @@ function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-
     let currentSection = '';
     const sections = document.querySelectorAll('section');
     
@@ -253,7 +242,7 @@ function initTerminal() {
 
   const welcomeBanner = `
 <span class="t-cyan">===============================================================</span>
-<span class="t-cyan">           TARUN JAMPANI DEVELOPER TERMINAL v13.0              </span>
+<span class="t-cyan">       SOSHOKU ARCHITECTURE - TARUN JAMPANI TERMINAL           </span>
 <span class="t-cyan">===============================================================</span>
 Type <span class="t-green">'help'</span> to view available commands or click quick action pills below.
 `;
@@ -448,7 +437,7 @@ function initSkills() {
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=15.0');
+    const certsResp = await fetch('data/certifications.json?v=16.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
@@ -507,7 +496,7 @@ function renderProjects(filter = 'all', query = '') {
   }
 
   if (filtered.length === 0) {
-    grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:40px; color:var(--text-dim);">No matching projects found.</div>`;
+    grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:40px; color:var(--text-muted);">No matching projects found.</div>`;
     return;
   }
 
@@ -534,7 +523,7 @@ function renderProjects(filter = 'all', query = '') {
           <span class="lang-dot"></span>
           <span>${escapeHtml(p.language || 'Python')}</span>
         </div>
-        <span><i class="fa-solid fa-star" style="color:#f59e0b;"></i> ${p.stars || 0}</span>
+        <span><i class="fa-solid fa-star" style="color:#d4af37;"></i> ${p.stars || 0}</span>
       </div>
     `;
 
@@ -543,7 +532,6 @@ function renderProjects(filter = 'all', query = '') {
   });
 }
 
-// HELPER FUNCTION: Get official brand badge icon for certifications (NO user photo)
 function getCertBadgeIconHtml(c) {
   const issuer = (c.issuer || '').toLowerCase();
   const title = (c.title || '').toLowerCase();
@@ -609,11 +597,11 @@ function openProjectModal(p) {
   if (!modal || !content) return;
 
   content.innerHTML = `
-    <h2 style="font-family:var(--font-title); font-size:1.8rem; margin-bottom:12px; color:#ffffff;">${escapeHtml(p.name)}</h2>
-    <p style="color:var(--text-secondary); margin-bottom:20px; line-height:1.7;">${escapeHtml(p.description)}</p>
+    <h2 style="font-family:var(--font-title); font-size:1.8rem; margin-bottom:12px; color:var(--text-dark);">${escapeHtml(p.name)}</h2>
+    <p style="color:var(--text-muted); margin-bottom:20px; line-height:1.7;">${escapeHtml(p.description)}</p>
     
     <div style="margin-bottom:20px;">
-      <h4 style="color:#38bdf8; margin-bottom:8px;">Technologies & Tools</h4>
+      <h4 style="color:var(--accent-rust); margin-bottom:8px;">Technologies & Tools</h4>
       <div class="project-tags">
         ${p.tags.map(t => `<span class="p-tag">${escapeHtml(t)}</span>`).join('')}
       </div>
@@ -638,15 +626,15 @@ function openCertModal(c) {
     <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
       ${getCertBadgeIconHtml(c)}
       <div>
-        <h2 style="font-family:var(--font-title); font-size:1.6rem; color:#ffffff;">${escapeHtml(c.title)}</h2>
-        <span style="color:#38bdf8; font-weight:700;">${escapeHtml(c.issuer)}</span>
+        <h2 style="font-family:var(--font-title); font-size:1.6rem; color:var(--text-dark);">${escapeHtml(c.title)}</h2>
+        <span style="color:var(--accent-rust); font-weight:700;">${escapeHtml(c.issuer)}</span>
       </div>
     </div>
 
-    <p style="color:var(--text-secondary); margin-bottom:20px; line-height:1.7;">${escapeHtml(c.description)}</p>
+    <p style="color:var(--text-muted); margin-bottom:20px; line-height:1.7;">${escapeHtml(c.description)}</p>
 
     <div style="margin-bottom:24px;">
-      <h4 style="color:#38bdf8; margin-bottom:8px;">Verified Skills & Competencies</h4>
+      <h4 style="color:var(--accent-rust); margin-bottom:8px;">Verified Skills & Competencies</h4>
       <div class="cert-skills-wrap">
         ${(c.skills || []).map(s => `<span class="c-skill-tag">${escapeHtml(s)}</span>`).join('')}
       </div>
@@ -717,7 +705,7 @@ function showToast(msg) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#38bdf8;"></i> <span>${escapeHtml(msg)}</span>`;
+  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:var(--accent-rust);"></i> <span>${escapeHtml(msg)}</span>`;
 
   container.appendChild(toast);
 
