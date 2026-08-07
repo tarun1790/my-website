@@ -242,7 +242,7 @@ function initTerminal() {
 
   const welcomeBanner = `
 <span class="t-cyan">===============================================================</span>
-<span class="t-cyan">       SOSHOKU ARCHITECTURE - TARUN JAMPANI TERMINAL           </span>
+<span class="t-cyan">             TARUN JAMPANI DEVELOPER TERMINAL                  </span>
 <span class="t-cyan">===============================================================</span>
 Type <span class="t-green">'help'</span> to view available commands or click quick action pills below.
 `;
@@ -437,7 +437,7 @@ function initSkills() {
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=2026.11.0');
+    const certsResp = await fetch('data/certifications.json?v=2026.99.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
@@ -579,7 +579,7 @@ function renderCertifications() {
 
       <div class="cert-meta-row">
         <span>Issued: <strong>${escapeHtml(c.date)}</strong></span>
-        ${(c.verificationUrl || c.verifyUrl) ? `<a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-gh" style="padding:4px 10px; font-size:0.78rem;" onclick="event.stopPropagation();">Verify Credential</a>` : ''}
+        ${(c.verificationUrl || c.verifyUrl) ? `<a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-primary" style="padding:6px 14px; font-size:0.78rem;" onclick="event.stopPropagation();">Verify</a>` : ''}
       </div>
     `;
 
