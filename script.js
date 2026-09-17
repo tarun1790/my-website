@@ -1,46 +1,443 @@
 /* ==========================================================================
-   TARUN JAMPANI PORTFOLIO LOGIC
-   Minimalist Premium Theme (script.js)
+   TARUN JAMPANI PORTFOLIO LOGIC (script.js)
+   Soshoku Luxury Editorial Theme & WebGL 3D Scene
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Global State Datasets
   let projectsData = [];
   let certsData = [];
 
-  initScrollReveal();
+  // Initialize Systems
+  initThreeJS();
+  initTypingEffect();
+  initNavigation();
+  initTerminal();
+  initSkills();
   loadDataAndRender();
+  initContactForm();
+  initCopyButtons();
   initModals();
 });
 
 /* ==========================================================================
-   SCROLL REVEAL ANIMATIONS
+   1. THREE.JS 3D WEBGL INTERACTIVE SCENE (SOSHOKU PALETTE)
    ========================================================================== */
-function initScrollReveal() {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+function initThreeJS() {
+  const canvas = document.getElementById('three-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 28;
+
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // 1. Terracotta Wireframe Cyber Sphere
+  const sphereGeo = new THREE.IcosahedronGeometry(18, 2);
+  const sphereMat = new THREE.MeshBasicMaterial({
+    color: 0xc6362e,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.25
+  });
+  const cyberSphere = new THREE.Mesh(sphereGeo, sphereMat);
+  cyberSphere.position.set(0, 0, -5);
+  scene.add(cyberSphere);
+
+  // 2. Inner Rotating Slate TorusKnot
+  const torusGeo = new THREE.TorusKnotGeometry(9, 2.5, 100, 16);
+  const torusMat = new THREE.MeshBasicMaterial({
+    color: 0x242833,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.18
+  });
+  const torusKnot = new THREE.Mesh(torusGeo, torusMat);
+  torusKnot.position.set(0, 0, -5);
+  scene.add(torusKnot);
+
+  // 3. Floating 3D Star Constellation Field (1500 Particles)
+  const particlesCount = 1500;
+  const positions = new Float32Array(particlesCount * 3);
+  const colors = new Float32Array(particlesCount * 3);
+
+  const colorOptions = [
+    new THREE.Color(0xc6362e),
+    new THREE.Color(0x242833),
+    new THREE.Color(0xd4af37),
+    new THREE.Color(0x121212)
+  ];
+
+  for (let i = 0; i < particlesCount * 3; i += 3) {
+    positions[i] = (Math.random() - 0.5) * 140;
+    positions[i + 1] = (Math.random() - 0.5) * 140;
+    positions[i + 2] = (Math.random() - 0.5) * 140;
+
+    const chosenColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+    colors[i] = chosenColor.r;
+    colors[i + 1] = chosenColor.g;
+    colors[i + 2] = chosenColor.b;
+  }
+
+  const particlesGeo = new THREE.BufferGeometry();
+  particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  const particlesMat = new THREE.PointsMaterial({
+    size: 0.75,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.7
+  });
+
+  const particleSystem = new THREE.Points(particlesGeo, particlesMat);
+  scene.add(particleSystem);
+
+  // Smooth Mouse Parallax Tracking
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.001;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.001;
+  });
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  function animate3D() {
+    requestAnimationFrame(animate3D);
+
+    targetX += (mouseX - targetX) * 0.05;
+    targetY += (mouseY - targetY) * 0.05;
+
+    cyberSphere.rotation.x += 0.002;
+    cyberSphere.rotation.y += 0.003;
+
+    torusKnot.rotation.x -= 0.003;
+    torusKnot.rotation.y -= 0.004;
+
+    particleSystem.rotation.y += 0.0008;
+
+    scene.rotation.y = targetX * 1.2;
+    scene.rotation.x = -targetY * 1.2;
+
+    renderer.render(scene, camera);
+  }
+
+  animate3D();
+}
+
+/* ==========================================================================
+   2. TYPING EFFECT
+   ========================================================================== */
+function initTypingEffect() {
+  const typingText = document.getElementById('typing-text');
+  if (!typingText) return;
+
+  const phrases = [
+    "Full-Stack Software Engineer & System Architect",
+    "AI Agent & Multi-Agent Memory Engineer",
+    "Machine Learning & Deep Learning Specialist",
+    "Reverse Engineering & Security Tools Developer"
+  ];
+
+  let phraseIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentPhrase = phrases[phraseIdx];
+
+    if (isDeleting) {
+      typingText.textContent = currentPhrase.substring(0, charIdx - 1);
+      charIdx--;
+    } else {
+      typingText.textContent = currentPhrase.substring(0, charIdx + 1);
+      charIdx++;
+    }
+
+    let typeSpeed = isDeleting ? 30 : 60;
+
+    if (!isDeleting && charIdx === currentPhrase.length) {
+      typeSpeed = 2200;
+      isDeleting = true;
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+      typeSpeed = 400;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  type();
+}
+
+/* ==========================================================================
+   3. NAVIGATION & SCROLLSPY
+   ========================================================================== */
+function initNavigation() {
+  const header = document.getElementById('main-header');
+  const mobileToggle = document.getElementById('mobile-toggle-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let currentSection = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 120;
+      const height = sec.offsetHeight;
+      if (window.scrollY >= top && window.scrollY < top + height) {
+        currentSection = sec.getAttribute('id');
       }
     });
-  }, observerOptions);
 
-  document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-    observer.observe(el);
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileToggle.querySelector('i').classList.toggle('fa-bars');
+      mobileToggle.querySelector('i').classList.toggle('fa-xmark');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+}
+
+/* ==========================================================================
+   4. INTERACTIVE TERMINAL SYSTEM
+   ========================================================================== */
+function initTerminal() {
+  const output = document.getElementById('terminal-output');
+  const input = document.getElementById('terminal-input');
+  const clearBtn = document.getElementById('t-clear-btn');
+  const copyBtn = document.getElementById('t-copy-btn');
+
+  if (!output || !input) return;
+
+  const history = [];
+  let historyIdx = -1;
+
+  const welcomeBanner = `
+<span class="t-cyan">===============================================================</span>
+<span class="t-cyan">             TARUN JAMPANI DEVELOPER TERMINAL                  </span>
+<span class="t-cyan">===============================================================</span>
+Type <span class="t-green">'help'</span> to view available commands or click quick action pills below.
+`;
+
+  output.innerHTML = `<div class="terminal-line">${welcomeBanner}</div>`;
+
+  const commands = {
+    help: `
+Available Commands:
+  <span class="t-green">neofetch</span>  - Display system profile & metrics summary
+  <span class="t-green">skills</span>    - List core tech stack & engineering skills
+  <span class="t-green">projects</span>  - Show top open source GitHub projects
+  <span class="t-green">certs</span>     - Display verified 10 certifications
+  <span class="t-green">contact</span>   - Print direct email & social handles
+  <span class="t-green">clear</span>     - Clear terminal screen
+`,
+    neofetch: `
+<span class="t-cyan">        ./tarun1790</span>       ---------------------------
+<span class="t-cyan">       /  _   _  \\</span>      <span class="t-green">User:</span> Tarun Jampani
+<span class="t-cyan">      |  (o) (o)  |</span>     <span class="t-green">Role:</span> Full-Stack & AI Engineer
+<span class="t-cyan">      |     <     |</span>     <span class="t-green">GitHub:</span> github.com/tarun1790
+<span class="t-cyan">       \\  '---'  /</span>      <span class="t-green">Certifications:</span> 10 Verified Credentials
+<span class="t-cyan">        '-------'</span>       <span class="t-green">Projects:</span> 14 Open Source Repositories
+                        <span class="t-green">Primary OS:</span> Windows 11 / Linux
+`,
+    skills: `
+<span class="t-purple">PROGRAMMING LANGUAGES:</span> Python, TypeScript, JavaScript, C++, SQL, HTML5, CSS3
+<span class="t-purple">FRAMEWORKS & WEB:</span> React, Node.js, Express, REST APIs, Tailwind CSS, GraphRAG
+<span class="t-purple">AI & MACHINE LEARNING:</span> PyTorch, TensorFlow, XGBoost, Scikit-Learn, OpenCV, LLM Memory
+<span class="t-purple">DEV & SECURITY:</span> Git, Docker, Windows API, Reverse Engineering, Linux, CI/CD
+`,
+    projects: `
+<span class="t-yellow">TOP GITHUB PROJECTS (14):</span>
+  1. <span class="t-cyan">TencentDB Agent Memory System</span> - Stateful multi-agent LLM governance framework
+  2. <span class="t-cyan">Reverse Skill & Security Pack</span> - Pentesting & security automation toolchain
+  3. <span class="t-cyan">Industrial AI Telemetry Predictor</span> - Deep Learning IoT sensor failure predictor
+  4. <span class="t-cyan">AQI Atmospheric Forecasting Engine</span> - LSTM neural network air quality model
+  5. <span class="t-cyan">WorldMonitor Intelligence Dashboard</span> - Real-time global situation map & data miner
+`,
+    certs: `
+<span class="t-yellow">VERIFIED CERTIFICATIONS (10):</span>
+  1. Oracle Cloud Infrastructure 2024 Generative AI Certified Professional
+  2. Oracle Autonomous Database Cloud 2024 Certified Specialist
+  3. NPTEL Elite Certificate - Data Science for Engineers (IIT Madras / 81%)
+  4. Google Cloud Generative AI Fundamentals
+  5. DeepTech DSA Certification - IIT Bombay Techfest
+  6. HP LIFE Data Science & Analytics
+  7. Infosys Python Programmer 1 & 2
+  8. Infosys Agile Software Development
+  9. IBMI Berlin Data Science Certification
+`,
+    contact: `
+<span class="t-cyan">Email:</span> tarun.jampani45@gmail.com
+<span class="t-cyan">LinkedIn:</span> linkedin.com/in/tarun-jampani-958329299/
+<span class="t-cyan">GitHub:</span> github.com/tarun1790
+<span class="t-cyan">Discord:</span> tarun1790
+`
+  };
+
+  function executeCommand(cmdStr) {
+    const rawCmd = cmdStr.trim().toLowerCase();
+
+    const cmdLine = document.createElement('div');
+    cmdLine.className = 'terminal-line';
+    cmdLine.innerHTML = `<span class="t-prompt">tarun@tarun1790:~$</span> ${escapeHtml(cmdStr)}`;
+    output.appendChild(cmdLine);
+
+    if (rawCmd === 'clear') {
+      output.innerHTML = '';
+      return;
+    }
+
+    const respLine = document.createElement('div');
+    respLine.className = 'terminal-line';
+
+    if (commands[rawCmd]) {
+      respLine.innerHTML = commands[rawCmd];
+    } else if (rawCmd !== '') {
+      respLine.innerHTML = `<span style="color:#ef4444;">zsh: command not found: ${escapeHtml(rawCmd)}. Type 'help' for available options.</span>`;
+    }
+
+    output.appendChild(respLine);
+    output.scrollTop = output.scrollHeight;
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const val = input.value;
+      if (val.trim() !== '') {
+        history.push(val);
+        historyIdx = history.length;
+      }
+      executeCommand(val);
+      input.value = '';
+    } else if (e.key === 'ArrowUp') {
+      if (historyIdx > 0) {
+        historyIdx--;
+        input.value = history[historyIdx];
+      }
+    } else if (e.key === 'ArrowDown') {
+      if (historyIdx < history.length - 1) {
+        historyIdx++;
+        input.value = history[historyIdx];
+      } else {
+        historyIdx = history.length;
+        input.value = '';
+      }
+    }
+  });
+
+  document.querySelectorAll('.cmd-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cmd = btn.dataset.cmd;
+      executeCommand(cmd);
+    });
+  });
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      output.innerHTML = '';
+    });
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const text = output.innerText;
+      navigator.clipboard.writeText(text);
+      showToast('Terminal output copied to clipboard!');
+    });
+  }
+}
+
+/* ==========================================================================
+   5. SKILLS MATRIX RENDERER
+   ========================================================================== */
+function initSkills() {
+  const container = document.getElementById('skills-container');
+  const tabs = document.querySelectorAll('.skill-tab');
+  if (!container) return;
+
+  const skillsData = [
+    { name: "Python", cat: "languages", icon: "fa-brands fa-python", level: 95 },
+    { name: "TypeScript / JavaScript", cat: "languages", icon: "fa-brands fa-js", level: 90 },
+    { name: "C++", cat: "languages", icon: "fa-solid fa-code", level: 85 },
+    { name: "HTML5 & CSS3", cat: "languages", icon: "fa-brands fa-html5", level: 95 },
+    { name: "React", cat: "frameworks", icon: "fa-brands fa-react", level: 90 },
+    { name: "Node.js & Express", cat: "frameworks", icon: "fa-brands fa-node-js", level: 88 },
+    { name: "REST APIs & Web Systems", cat: "frameworks", icon: "fa-solid fa-layer-group", level: 92 },
+    { name: "GraphRAG & Agent Memory", cat: "ai", icon: "fa-solid fa-brain", level: 92 },
+    { name: "PyTorch & TensorFlow", cat: "ai", icon: "fa-solid fa-robot", level: 88 },
+    { name: "Scikit-Learn & XGBoost", cat: "ai", icon: "fa-solid fa-chart-line", level: 90 },
+    { name: "Docker & Containerization", cat: "tools", icon: "fa-brands fa-docker", level: 85 },
+    { name: "Git & Version Control", cat: "tools", icon: "fa-brands fa-git-alt", level: 95 },
+    { name: "Reverse Engineering", cat: "tools", icon: "fa-solid fa-shield-halved", level: 86 },
+    { name: "SQL & Databases", cat: "tools", icon: "fa-solid fa-database", level: 88 }
+  ];
+
+  function renderSkills(category = 'all') {
+    container.innerHTML = '';
+    const filtered = category === 'all' ? skillsData : skillsData.filter(s => s.cat === category);
+
+    filtered.forEach(s => {
+      const card = document.createElement('div');
+      card.className = 'skill-card glass-panel';
+      card.innerHTML = `
+        <div class="skill-card-icon"><i class="${s.icon}"></i></div>
+        <div class="skill-card-info">
+          <div class="skill-name">${escapeHtml(s.name)}</div>
+          <div class="skill-cat">${escapeHtml(s.cat.toUpperCase())}</div>
+          <div class="skill-progress-bg">
+            <div class="skill-progress-bar" style="width: ${s.level}%;"></div>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  renderSkills('all');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderSkills(tab.dataset.tab);
+    });
   });
 }
 
 /* ==========================================================================
-   LOAD DATA & RENDER PROJECTS & CERTIFICATIONS
+   6. LOAD DATA & RENDER PROJECTS & CERTIFICATIONS
    ========================================================================== */
 async function loadDataAndRender() {
   try {
-    const certsResp = await fetch('data/certifications.json?v=2026.99.1');
+    const certsResp = await fetch('data/certifications.json?v=2026.99.0');
     if (certsResp.ok) {
       certsData = await certsResp.json();
     }
@@ -54,31 +451,106 @@ async function loadDataAndRender() {
 
   projectsData = fallbackProjects;
 
-  renderProjects();
+  renderProjects('all', '');
   renderCertifications();
+
+  const searchInput = document.getElementById('project-search-input');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+      renderProjects(activeFilter, query);
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const query = searchInput ? searchInput.value.toLowerCase() : '';
+      renderProjects(btn.dataset.filter, query);
+    });
+  });
 }
 
-function renderProjects() {
+function renderProjects(filter = 'all', query = '') {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
 
   grid.innerHTML = '';
 
-  projectsData.forEach(p => {
+  let filtered = projectsData;
+
+  if (filter !== 'all') {
+    filtered = filtered.filter(p => p.category === filter);
+  }
+
+  if (query) {
+    filtered = filtered.filter(p => 
+      p.name.toLowerCase().includes(query) || 
+      p.description.toLowerCase().includes(query) ||
+      p.tags.some(t => t.toLowerCase().includes(query))
+    );
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:40px; color:var(--text-muted);">No matching projects found.</div>`;
+    return;
+  }
+
+  filtered.forEach(p => {
     const card = document.createElement('div');
-    card.className = 'minimal-card';
+    card.className = 'project-card glass-panel';
     card.innerHTML = `
-      <div class="card-title">${escapeHtml(p.name)}</div>
-      <div class="card-desc">${escapeHtml(p.description)}</div>
-      <div class="card-meta">
-        <span><i class="fa-solid fa-code"></i> ${escapeHtml(p.language || 'Code')}</span>
-        <span><i class="fa-solid fa-star"></i> ${p.stars || 0}</span>
+      <div class="project-top-row">
+        <div class="project-icon-box"><i class="${p.icon || 'fa-solid fa-code'}"></i></div>
+        <div class="project-links">
+          <a href="${p.url}" target="_blank" rel="noopener" class="p-link-icon" title="View GitHub Repo" onclick="event.stopPropagation();"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-title">${escapeHtml(p.name)}</div>
+      <div class="project-desc">${escapeHtml(p.description)}</div>
+
+      <div class="project-tags">
+        ${p.tags.map(t => `<span class="p-tag">${escapeHtml(t)}</span>`).join('')}
+      </div>
+
+      <div class="project-footer-meta">
+        <div class="p-lang">
+          <span class="lang-dot"></span>
+          <span>${escapeHtml(p.language || 'Python')}</span>
+        </div>
+        <span><i class="fa-solid fa-star" style="color:#d4af37;"></i> ${p.stars || 0}</span>
       </div>
     `;
 
     card.addEventListener('click', () => openProjectModal(p));
     grid.appendChild(card);
   });
+}
+
+function getCertBadgeIconHtml(c) {
+  const issuer = (c.issuer || '').toLowerCase();
+  const title = (c.title || '').toLowerCase();
+
+  if (issuer.includes('oracle')) {
+    return `<div class="cert-icon-badge oracle-badge" title="Oracle Certified"><i class="fa-solid fa-award"></i></div>`;
+  } else if (issuer.includes('google') || title.includes('google')) {
+    return `<div class="cert-icon-badge google-badge" title="Google Cloud Certified"><i class="fa-brands fa-google"></i></div>`;
+  } else if (issuer.includes('nptel') || issuer.includes('iit')) {
+    return `<div class="cert-icon-badge iit-badge" title="NPTEL / IIT Elite"><i class="fa-solid fa-graduation-cap"></i></div>`;
+  } else if (issuer.includes('infosys')) {
+    return `<div class="cert-icon-badge infosys-badge" title="Infosys Springboard"><i class="fa-solid fa-code"></i></div>`;
+  } else if (issuer.includes('hp')) {
+    return `<div class="cert-icon-badge hp-badge" title="HP LIFE Certified"><i class="fa-solid fa-chart-line"></i></div>`;
+  } else if (issuer.includes('ibmi') || issuer.includes('berlin')) {
+    return `<div class="cert-icon-badge ibmi-badge" title="IBMI Berlin Certificate"><i class="fa-solid fa-certificate"></i></div>`;
+  } else {
+    return `<div class="cert-icon-badge google-badge" title="Verified Certification"><i class="fa-solid fa-award"></i></div>`;
+  }
 }
 
 function renderCertifications() {
@@ -89,13 +561,25 @@ function renderCertifications() {
 
   certsData.forEach(c => {
     const card = document.createElement('div');
-    card.className = 'minimal-card';
+    card.className = 'cert-card glass-panel';
     card.innerHTML = `
-      <div class="card-issuer">${escapeHtml(c.issuer)}</div>
-      <div class="card-title">${escapeHtml(c.title)}</div>
-      <div class="card-desc">${escapeHtml(c.description)}</div>
-      <div class="card-meta">
-        <span><i class="fa-solid fa-calendar"></i> ${escapeHtml(c.date)}</span>
+      <div class="cert-badge-header">
+        ${getCertBadgeIconHtml(c)}
+        <div>
+          <div class="cert-title">${escapeHtml(c.title)}</div>
+          <div class="cert-issuer">${escapeHtml(c.issuer)}</div>
+        </div>
+      </div>
+
+      <div class="cert-desc">${escapeHtml(c.description)}</div>
+
+      <div class="cert-skills-wrap">
+        ${(c.skills || []).map(s => `<span class="c-skill-tag">${escapeHtml(s)}</span>`).join('')}
+      </div>
+
+      <div class="cert-meta-row">
+        <span>Issued: <strong>${escapeHtml(c.date)}</strong></span>
+        ${(c.verificationUrl || c.verifyUrl) ? `<a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-primary" style="padding:6px 14px; font-size:0.78rem;" onclick="event.stopPropagation();">Verify</a>` : ''}
       </div>
     `;
 
@@ -105,7 +589,7 @@ function renderCertifications() {
 }
 
 /* ==========================================================================
-   MODALS
+   7. MODALS & FORMS
    ========================================================================== */
 function openProjectModal(p) {
   const modal = document.getElementById('project-modal');
@@ -113,19 +597,21 @@ function openProjectModal(p) {
   if (!modal || !content) return;
 
   content.innerHTML = `
-    <h2 class="card-title" style="font-size:2rem; margin-bottom:1rem;">${escapeHtml(p.name)}</h2>
-    <p style="color:var(--text-muted); margin-bottom:2rem; line-height:1.7; font-size:1.1rem;">${escapeHtml(p.description)}</p>
+    <h2 style="font-family:var(--font-title); font-size:1.8rem; margin-bottom:12px; color:var(--text-dark);">${escapeHtml(p.name)}</h2>
+    <p style="color:var(--text-muted); margin-bottom:20px; line-height:1.7;">${escapeHtml(p.description)}</p>
     
-    <div style="margin-bottom:2rem;">
-      <h4 style="margin-bottom:1rem; font-family:var(--font-sans); color:var(--text-color);">Technologies & Tools</h4>
-      <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-        ${p.tags.map(t => `<span style="padding:0.4rem 0.8rem; border:1px solid var(--border-color); border-radius:4px; font-size:0.85rem; color:var(--text-muted);">${escapeHtml(t)}</span>`).join('')}
+    <div style="margin-bottom:20px;">
+      <h4 style="color:var(--accent-rust); margin-bottom:8px;">Technologies & Tools</h4>
+      <div class="project-tags">
+        ${p.tags.map(t => `<span class="p-tag">${escapeHtml(t)}</span>`).join('')}
       </div>
     </div>
 
-    <a href="${p.url}" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none;">
-      View Repository <i class="fa-solid fa-arrow-right" style="margin-left:0.5rem;"></i>
-    </a>
+    <div style="display:flex; gap:16px;">
+      <a href="${p.url}" target="_blank" rel="noopener" class="btn-primary">
+        <i class="fa-brands fa-github"></i> View GitHub Repository
+      </a>
+    </div>
   `;
 
   modal.classList.add('active');
@@ -137,22 +623,26 @@ function openCertModal(c) {
   if (!modal || !content) return;
 
   content.innerHTML = `
-    <div class="card-issuer" style="margin-bottom:1rem;">${escapeHtml(c.issuer)}</div>
-    <h2 class="card-title" style="font-size:2rem; margin-bottom:1rem;">${escapeHtml(c.title)}</h2>
-    <p style="color:var(--text-muted); margin-bottom:2rem; line-height:1.7; font-size:1.1rem;">${escapeHtml(c.description)}</p>
-
-    <div style="margin-bottom:2rem;">
-      <h4 style="margin-bottom:1rem; font-family:var(--font-sans); color:var(--text-color);">Skills</h4>
-      <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-        ${(c.skills || []).map(s => `<span style="padding:0.4rem 0.8rem; border:1px solid var(--border-color); border-radius:4px; font-size:0.85rem; color:var(--text-muted);">${escapeHtml(s)}</span>`).join('')}
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
+      ${getCertBadgeIconHtml(c)}
+      <div>
+        <h2 style="font-family:var(--font-title); font-size:1.6rem; color:var(--text-dark);">${escapeHtml(c.title)}</h2>
+        <span style="color:var(--accent-rust); font-weight:700;">${escapeHtml(c.issuer)}</span>
       </div>
     </div>
 
-    ${(c.verificationUrl || c.verifyUrl) ? `
-      <a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none;">
-        Verify Credential <i class="fa-solid fa-arrow-right" style="margin-left:0.5rem;"></i>
-      </a>
-    ` : ''}
+    <p style="color:var(--text-muted); margin-bottom:20px; line-height:1.7;">${escapeHtml(c.description)}</p>
+
+    <div style="margin-bottom:24px;">
+      <h4 style="color:var(--accent-rust); margin-bottom:8px;">Verified Skills & Competencies</h4>
+      <div class="cert-skills-wrap">
+        ${(c.skills || []).map(s => `<span class="c-skill-tag">${escapeHtml(s)}</span>`).join('')}
+      </div>
+    </div>
+
+    <div style="display:flex; gap:16px;">
+      ${(c.verificationUrl || c.verifyUrl) ? `<a href="${c.verificationUrl || c.verifyUrl}" target="_blank" rel="noopener" class="btn-primary"><i class="fa-solid fa-award"></i> Verify Official Credential</a>` : ''}
+    </div>
   `;
 
   modal.classList.add('active');
@@ -171,6 +661,57 @@ function initModals() {
     if (e.target === pModal) pModal.classList.remove('active');
     if (e.target === cModal) cModal.classList.remove('active');
   });
+
+  const uploadBtn = document.getElementById('upload-cert-trigger-btn');
+  if (uploadBtn) {
+    uploadBtn.addEventListener('click', () => {
+      showToast('To add new certifications, feel free to send them via direct message or email!');
+    });
+  }
+}
+
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contact-name').value;
+    const email = document.getElementById('contact-email').value;
+    const subject = document.getElementById('contact-subject').value;
+    const message = document.getElementById('contact-message').value;
+
+    const mailtoUrl = `mailto:tarun.jampani45@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+    window.location.href = mailtoUrl;
+
+    showToast('Redirecting to your default email client...');
+    form.reset();
+  });
+}
+
+function initCopyButtons() {
+  document.querySelectorAll('.copy-small-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy;
+      navigator.clipboard.writeText(text);
+      showToast(`Copied to clipboard: ${text}`);
+    });
+  });
+}
+
+function showToast(msg) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color:var(--accent-rust);"></i> <span>${escapeHtml(msg)}</span>`;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3500);
 }
 
 function escapeHtml(str) {
@@ -192,6 +733,7 @@ const fallbackProjects = [
     tags: ["Python", "LLM", "Agentic Workflows", "Vector DB"],
     language: "Python",
     stars: 12,
+    icon: "fa-solid fa-brain",
     url: "https://github.com/tarun1790/TencentDB-Agent-Memory"
   },
   {
@@ -201,6 +743,7 @@ const fallbackProjects = [
     tags: ["C++", "Python", "Security", "Reverse Engineering"],
     language: "C++",
     stars: 18,
+    icon: "fa-solid fa-shield-halved",
     url: "https://github.com/tarun1790/Reverse-Skill-Security-Pack"
   },
   {
@@ -210,6 +753,7 @@ const fallbackProjects = [
     tags: ["Python", "PyTorch", "Predictive ML", "IoT"],
     language: "Python",
     stars: 15,
+    icon: "fa-solid fa-robot",
     url: "https://github.com/tarun1790/Industrial-AI-Telemetry-Predictor"
   },
   {
@@ -219,6 +763,7 @@ const fallbackProjects = [
     tags: ["Python", "XGBoost", "Deep Learning", "AQI"],
     language: "Python",
     stars: 9,
+    icon: "fa-solid fa-chart-line",
     url: "https://github.com/tarun1790/AQI-Atmospheric-Forecasting-Engine"
   },
   {
@@ -228,6 +773,7 @@ const fallbackProjects = [
     tags: ["TypeScript", "React", "REST APIs", "Mapping"],
     language: "TypeScript",
     stars: 22,
+    icon: "fa-solid fa-laptop-code",
     url: "https://github.com/tarun1790/WorldMonitor-Intelligence-Dashboard"
   },
   {
@@ -237,6 +783,7 @@ const fallbackProjects = [
     tags: ["JavaScript", "Node.js", "Algorithms", "Analytics"],
     language: "JavaScript",
     stars: 7,
+    icon: "fa-solid fa-code",
     url: "https://github.com/tarun1790/LeetCode-Analytics-Tracker"
   }
 ];
