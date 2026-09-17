@@ -197,8 +197,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-image-wrap {
-  width: 140px;
-  height: 140px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--border-color);
