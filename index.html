@@ -29,7 +29,10 @@
     <main class="page-wrap">
       
       <header class="site-header reveal-on-scroll">
-        <a href="#home" class="brand">Tarun Jampani</a>
+        <div class="brand" style="display:flex; gap:1rem; font-size:1.5rem;">
+          <a href="https://github.com/tarun1790" target="_blank" rel="noopener" style="color:var(--text-color);"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/tarun-jampani-958329299/" target="_blank" rel="noopener" style="color:var(--text-color);"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
         <nav class="site-nav">
           <a href="#about">About</a>
           <a href="#projects">Work</a>
@@ -87,24 +90,35 @@
         </div>
       </section>
 
-      <!-- EXPERTISE / TIMELINE SECTION -->
-      <section id="expertise" class="expertise-section reveal-on-scroll">
+      <!-- EXPERIENCE SECTION -->
+      <section id="experience" class="expertise-section reveal-on-scroll">
         <div class="section-heading">
-          <h2>Expertise</h2>
+          <h2>Experience</h2>
         </div>
         <div class="section-content">
           <div class="expertise-list">
-            <div class="expertise-item">
-              <h3>Architecting Agent Memory</h3>
-              <p>Developed autonomous agent memory frameworks enabling stateful LLM multi-agent governance (Chat Memory, Skill, LLM-Wiki, Code-Graph) and specialized AI router packs for security penetration testing.</p>
+            <div class="expertise-item" style="margin-bottom:2.5rem;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+                <h3 style="margin:0;">Software Engineer</h3>
+                <span style="color:var(--text-muted); font-family:var(--font-sans); font-size:0.9rem;">2023 - Present</span>
+              </div>
+              <p style="color:var(--text-muted); margin-bottom:0.75rem;"><strong>Freelance / Open Source</strong></p>
+              <ul style="color:var(--text-color); margin-left:1.5rem; line-height:1.6; font-size:1.05rem;">
+                <li>Developed autonomous agent memory frameworks and stateful LLM governance systems.</li>
+                <li>Architected full-stack real-time intelligence dashboards and developer toolchains.</li>
+                <li>Engineered predictive telemetry pipelines for IoT systems using PyTorch and XGBoost.</li>
+              </ul>
             </div>
             <div class="expertise-item">
-              <h3>Predictive Telemetry Systems</h3>
-              <p>Engineered predictive maintenance and anomaly detection pipelines for IoT sensor streams and atmospheric AQI forecasting using Deep Learning, LSTM, and XGBoost architectures.</p>
-            </div>
-            <div class="expertise-item">
-              <h3>Full-Stack Platform Engineering</h3>
-              <p>Created real-time global intelligence situational awareness dashboards, corporate subsidiary data mining engines, and interactive developer toolchains.</p>
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+                <h3 style="margin:0;">AI Developer</h3>
+                <span style="color:var(--text-muted); font-family:var(--font-sans); font-size:0.9rem;">2022 - 2023</span>
+              </div>
+              <p style="color:var(--text-muted); margin-bottom:0.75rem;"><strong>Independent Projects</strong></p>
+              <ul style="color:var(--text-color); margin-left:1.5rem; line-height:1.6; font-size:1.05rem;">
+                <li>Implemented ML models for anomaly detection and atmospheric forecasting.</li>
+                <li>Specialized in RAG pipelines, fine-tuning LLMs, and vector search database integrations.</li>
+              </ul>
             </div>
           </div>
         </div>

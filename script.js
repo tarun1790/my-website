@@ -52,7 +52,25 @@ async function loadDataAndRender() {
     certsData = fallbackCerts;
   }
 
-  projectsData = fallbackProjects;
+  try {
+    const reposResp = await fetch('https://api.github.com/users/tarun1790/repos?sort=updated&per_page=6');
+    if (reposResp.ok) {
+      const repos = await reposResp.json();
+      projectsData = repos.map(repo => ({
+        name: repo.name,
+        description: repo.description || 'GitHub Repository',
+        category: 'web',
+        tags: repo.language ? [repo.language] : [],
+        language: repo.language,
+        stars: repo.stargazers_count,
+        url: repo.html_url
+      }));
+    } else {
+      projectsData = fallbackProjects;
+    }
+  } catch (err) {
+    projectsData = fallbackProjects;
+  }
 
   renderProjects();
   renderCertifications();

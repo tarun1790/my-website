@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
    LAYOUT / STRUCTURE
 ========================================= */
 .page-wrap {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -495,3 +495,17 @@ section {
 .modal-close-btn:hover {
   color: var(--text-color);
 }
+
+@media (max-width: 600px) {
+  .site-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+  .site-nav { flex-wrap: wrap; gap: 1rem; }
+  .page-wrap { padding: 0 1rem; }
+}
+
+
+@media (min-width: 900px) {
+  .minimal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
