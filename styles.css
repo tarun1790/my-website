@@ -144,6 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2.5rem;
 }
@@ -202,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  margin: 0 auto; /* Centers the image on mobile */
 }
 
 .hero-image {
@@ -212,7 +214,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-smooth);
 }
 
-.hero-image:hover {
+.hero-image:hover,
+.hero-image:active,
+.hero-image-wrap:active .hero-image {
   filter: grayscale(0%);
 }
 
