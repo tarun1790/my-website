@@ -53,16 +53,16 @@ async function loadDataAndRender() {
   }
 
   try {
-    const reposResp = await fetch('https://api.github.com/users/tarun1790/repos?sort=updated&per_page=6');
+    const reposResp = await fetch('https://api.github.com/users/tarun1790/repos?sort=updated&per_page=10');
     if (reposResp.ok) {
       const repos = await reposResp.json();
-      projectsData = repos.map(repo => ({
+      const filteredRepos = repos.filter(r => r.name !== 'my-website').slice(0, 6);
+      projectsData = filteredRepos.map(repo => ({
         name: repo.name,
         description: repo.description || 'GitHub Repository',
         category: 'web',
         tags: repo.language ? [repo.language] : [],
         language: repo.language,
-        stars: repo.stargazers_count,
         url: repo.html_url
       }));
     } else {
@@ -90,7 +90,6 @@ function renderProjects() {
       <div class="card-desc">${escapeHtml(p.description)}</div>
       <div class="card-meta">
         <span><i class="fa-solid fa-code"></i> ${escapeHtml(p.language || 'Code')}</span>
-        <span><i class="fa-solid fa-star"></i> ${p.stars || 0}</span>
       </div>
     `;
 
