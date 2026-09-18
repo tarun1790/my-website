@@ -328,7 +328,17 @@ section {
 
 .skill-pill i {
   font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
+
+.skill-pill:hover .fa-python { color: #3776AB; }
+.skill-pill:hover .fa-brain { color: #ff6b6b; }
+.skill-pill:hover .fa-eye { color: #4dabf7; }
+.skill-pill:hover .fa-react { color: #61dafb; }
+.skill-pill:hover .fa-node-js { color: #68a063; }
+.skill-pill:hover .fa-database { color: #f29111; }
+.skill-pill:hover .fa-git-alt { color: #f34f29; }
+.skill-pill:hover .fa-docker { color: #2496ed; }
 
 /* =========================================
    GRIDS (Projects & Certs)
