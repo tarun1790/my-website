@@ -39,18 +39,8 @@ function initScrollReveal() {
    LOAD DATA & RENDER PROJECTS & CERTIFICATIONS
    ========================================================================== */
 async function loadDataAndRender() {
-  try {
-    const certsResp = await fetch('data/certifications.json?v=2026.99.1');
-    if (certsResp.ok) {
-      certsData = await certsResp.json();
-    }
-  } catch (err) {
-    console.warn('Using fallback cert dataset:', err);
-  }
-
-  if (!certsData || certsData.length === 0) {
-    certsData = fallbackCerts;
-  }
+  // Use static certification data to prevent any local fetch overhead or failures
+  certsData = fallbackCerts;
 
   // Use static project data to prevent GitHub API rate limits (HTTP 429)
   projectsData = fallbackProjects;
