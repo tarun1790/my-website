@@ -52,25 +52,8 @@ async function loadDataAndRender() {
     certsData = fallbackCerts;
   }
 
-  try {
-    const reposResp = await fetch('https://api.github.com/users/tarun1790/repos?sort=updated&per_page=10');
-    if (reposResp.ok) {
-      const repos = await reposResp.json();
-      const filteredRepos = repos.filter(r => r.name !== 'my-website').slice(0, 6);
-      projectsData = filteredRepos.map(repo => ({
-        name: repo.name,
-        description: repo.description || 'GitHub Repository',
-        category: 'web',
-        tags: repo.language ? [repo.language] : [],
-        language: repo.language,
-        url: repo.html_url
-      }));
-    } else {
-      projectsData = fallbackProjects;
-    }
-  } catch (err) {
-    projectsData = fallbackProjects;
-  }
+  // Use static project data to prevent GitHub API rate limits (HTTP 429)
+  projectsData = fallbackProjects;
 
   renderProjects();
   renderCertifications();
@@ -204,7 +187,7 @@ function escapeHtml(str) {
 const fallbackProjects = [
   {
     name: "TencentDB Agent Memory System",
-    description: "Stateful LLM agent memory governance architecture featuring Chat-Memory, Skill, LLM-Wiki, and Code-Graph indexing.",
+    description: "Stateful LLM memory architecture integrating LangChain, FAISS vector stores, and Knowledge Graphs for context-aware multi-agent RAG pipelines.",
     category: "ai",
     tags: ["Python", "LLM", "Agentic Workflows", "Vector DB"],
     language: "Python",
@@ -213,7 +196,7 @@ const fallbackProjects = [
   },
   {
     name: "Reverse Skill & Security Pack",
-    description: "Pentesting tools, automated reverse engineering routines, and AI router packs for system auditing.",
+    description: "Automated penetration testing suite utilizing Python automation, Radare2 for reverse engineering, and AI-driven vulnerability routing algorithms.",
     category: "security",
     tags: ["C++", "Python", "Security", "Reverse Engineering"],
     language: "C++",
@@ -222,7 +205,7 @@ const fallbackProjects = [
   },
   {
     name: "Industrial AI Telemetry Predictor",
-    description: "Predictive maintenance pipeline utilizing Deep Learning and LSTM neural networks for IoT sensor stream fault prediction.",
+    description: "IoT predictive maintenance pipeline leveraging PyTorch LSTM recurrent neural networks to process time-series telemetry and forecast sensor anomalies.",
     category: "ai",
     tags: ["Python", "PyTorch", "Predictive ML", "IoT"],
     language: "Python",
@@ -231,7 +214,7 @@ const fallbackProjects = [
   },
   {
     name: "AQI Atmospheric Forecasting Engine",
-    description: "Deep learning model forecasting air quality index metrics based on satellite telemetry and meteorological data.",
+    description: "Multi-source deep learning framework utilizing XGBoost and spatial-temporal neural networks to forecast AQI using satellite telemetry data.",
     category: "ai",
     tags: ["Python", "XGBoost", "Deep Learning", "AQI"],
     language: "Python",
@@ -240,7 +223,7 @@ const fallbackProjects = [
   },
   {
     name: "WorldMonitor Intelligence Dashboard",
-    description: "Real-time global intelligence dashboard mapping geopolitical telemetry, data mining, and live situational awareness.",
+    description: "High-throughput React/Node.js dashboard utilizing WebSockets and D3.js to visualize live global telemetry and perform real-time geospatial mapping.",
     category: "web",
     tags: ["TypeScript", "React", "REST APIs", "Mapping"],
     language: "TypeScript",
@@ -249,7 +232,7 @@ const fallbackProjects = [
   },
   {
     name: "LeetCode Analytics Tracker",
-    description: "Automated telemetry logger tracking algorithmic problem-solving speed, runtime complexity, and streak metrics.",
+    description: "Full-stack automated analytics platform built with Express and MongoDB to track Big O complexity metrics, submission telemetry, and streak data." ,
     category: "web",
     tags: ["JavaScript", "Node.js", "Algorithms", "Analytics"],
     language: "JavaScript",
@@ -332,3 +315,4 @@ const fallbackCerts = [
     verifyUrl: "https://ibmi.de"
   }
 ];
+
