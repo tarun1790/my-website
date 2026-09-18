@@ -332,6 +332,8 @@ section {
 }
 
 .skill-pill:hover .fa-python { color: #3776AB; }
+.skill-pill:hover .fa-js { color: #F7DF1E; }
+.skill-pill:hover .fa-code { color: #3178C6; }
 .skill-pill:hover .fa-brain { color: #ff6b6b; }
 .skill-pill:hover .fa-eye { color: #4dabf7; }
 .skill-pill:hover .fa-react { color: #61dafb; }
