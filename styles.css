@@ -296,6 +296,41 @@ section {
 }
 
 /* =========================================
+   SKILLS
+========================================= */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  transform: translateY(-3px);
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+.skill-pill i {
+  font-size: 1.1rem;
+}
+
+/* =========================================
    GRIDS (Projects & Certs)
 ========================================= */
 .minimal-grid {
